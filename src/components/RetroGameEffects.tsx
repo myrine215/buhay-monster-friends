@@ -5,7 +5,7 @@ import * as React from 'react';
  */
 const RetroGameEffects: React.FC = () => {
   const [isLoading, setIsLoading] = React.useState(true);
-  const [bgMusicPlaying, setBgMusicPlaying] = React.useState(false);
+  
   const audioRef = React.useRef<HTMLAudioElement | null>(null);
   
   // Add click sound effect function
@@ -22,27 +22,6 @@ const RetroGameEffects: React.FC = () => {
       console.log("Browser doesn't support audio playback");
     }
   }, []);
-
-  // Toggle background music function
-  const toggleBackgroundMusic = React.useCallback(() => {
-    if (!audioRef.current) {
-      audioRef.current = new Audio();
-      // Short base64 encoded music loop
-      audioRef.current.src = 'data:audio/mp3;base64,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BoZBoFAMAy8xpAoylpNqGQVQiMAhQQqLQAJQcYOhc2yN2BBQdGQJADCQ0FwFMLAwCKAcx4DkACALGAwcEQYDmEgKFgGPgwFB8GAgFC4IAgWFjAJBICXwTEBgETJAEIwHpBzIKCpeGAoUEBeGCRkBwAHgwdGFgCxhoFIAiGQCGgyVGxMLDoydA0AgbAYDCEQAMYNgcJDAASGAxEBQQiC6GDQDC4IBwxMi4MTTEUAAoKIwBMBAowODD+FACJRKHDpyCiYUGlGOpoZkgIHDDoEEJqYRAaAHgGYTCJgcOA8KmJQUZBIRoDHA8YLBIKDwGFB4BgUZGIxh2DAQcAgaYPAqMAcYZBQCBBcNCgBAQwzBDJoZAhEwADgQAGGAABAVTQtKwCYFgxeC3GDBPBQVMIgElRNSMAQSLDOYRCQqAQEFCowOCDIXKLAEAT///EAAYlDhSGgANCQBRIJmCwQaUCZZFRwSMMAQxP///+ypCEjTAIJgMAmsIgAjguZHARYDWBMnBAMIgILmKgeMQgIwcBUSOp5AQNPQcBDokAb8mAQGYUBAYQGhUIJAZNC0GGQQXAwJHQQKANuXEigoxPEP///zThEAAkBRAAsYRAFBYUJCoDGSoEGB46CBhECRgKBooEGrBCbr///0KAYDoA0ARgOA4YFgHAQQGYCgHiA4MtKiKm5hWjRlgC5gsCBgOARg6ExhkBZ0B6H////MAA2A5QBCqIE0wFgARBYCAKAphIFAwBmLIZGEYA//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+1GAAAA/8AAAIAAANIAAAAQAAAJFoAAAiAAAG+AAAACEAAANIAAAAQAAAaQAAAAgAAA0gAAABAAABpAAAACAAACAAAAAAAAA==';
-      audioRef.current.volume = 0.15;
-      audioRef.current.loop = true;
-    }
-    
-    if (bgMusicPlaying) {
-      audioRef.current.pause();
-      setBgMusicPlaying(false);
-    } else {
-      audioRef.current.play().catch(() => {
-        console.log("Browser blocked background music autoplay");
-      });
-      setBgMusicPlaying(true);
-    }
-  }, [bgMusicPlaying]);
 
   // Handle clicks to play sound
   React.useEffect(() => {
@@ -119,7 +98,7 @@ const RetroGameEffects: React.FC = () => {
     }
   }, []);
   
-  // Simulate loading delay for the loading screen
+  // Simulate loading delay for the loading screen and start background music
   React.useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
@@ -141,6 +120,34 @@ const RetroGameEffects: React.FC = () => {
     } catch (error) {
       console.log("Browser doesn't support audio playback");
     }
+    
+    // Auto-play background music
+    if (!audioRef.current) {
+      audioRef.current = new Audio();
+      // Background music loop (base64 encoded)
+      audioRef.current.src = 'data:audio/mp3;base64,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BoZBoFAMAy8xpAoylpNqGQVQiMAhQQqLQAJQcYOhc2yN2BBQdGQJADCQ0FwFMLAwCKAcx4DkACALGAwcEQYDmEgKFgGPgwFB8GAgFC4IAgWFjAJBICXwTEBgETJAEIwHpBzIKCpeGAoUEBeGCRkBwAHgwdGFgCxhoFIAiGQCGgyVGxMLDoydA0AgbAYDCEQAMYNgcJDAASGAxEBQQiC6GDQDC4IBwxMi4MTTEUAAoKIwBMBAowODD+FACJRKHDpyCiYUGlGOpoZkgIHDDoEEJqYRAaAHgGYTCJgcOA8KmJQUZBIRoDHA8YLBIKDwGFB4BgUZGIxh2DAQcAgaYPAqMAcYZBQCBBcNCgBAQwzBDJoZAhEwADgQAGGAABAVTQtKwCYFgxeC3GDBPBQVMIgElRNSMAQSLDOYRCQqAQEFCowOCDIXKLAEAT///EAAYlDhSGgANCQBRIJmCwQaUCZZFRwSMMAQxP///+ypCEjTAIJgMAmsIgAjguZHARYDWBMnBAMIgILmKgeMQgIwcBUSOp5AQNPQcBDokAb8mAQGYUBAYQGhUIJAZNC0GGQQXAwJHQQKANuXEigoxPEP///zThEAAkBRAAsYRAFBYUJCoDGSoEGB46CBhECRgKBooEGrBCbr///0KAYDoA0ARgOA4YFgHAQQGYCgHiA4MtKiKm5hWjRlgC5gsCBgOARg6ExhkBZ0B6H////MAA2A5QBCqIE0wFgARBYCAKAphIFAwBmLIZGEYA//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+1GAAAA/8AAAIAAANIAAAAQAAAJFoAAAiAAAG+AAAACEAAANIAAAAQAAAaQAAAAgAAA0gAAABAAABpAAAACAAACAAAAAAAAA==';
+      audioRef.current.volume = 0.30; // Increased volume to 30%
+      audioRef.current.loop = true;
+    }
+    
+    // Attempt to play background music on first load
+    // This will likely be blocked by browsers until user interaction
+    audioRef.current.play().catch(() => {
+      // Will play after first interaction
+      console.log("Background music autoplay blocked, will play after user interaction");
+      
+      // Set up a one-time click handler to start the music
+      const playMusicOnFirstClick = () => {
+        if (audioRef.current) {
+          audioRef.current.play().catch(error => {
+            console.log("Still unable to play background music");
+          });
+        }
+        document.removeEventListener('click', playMusicOnFirstClick);
+      };
+      
+      document.addEventListener('click', playMusicOnFirstClick);
+    });
     
     return () => clearTimeout(timer);
   }, []);
@@ -233,8 +240,8 @@ const RetroGameEffects: React.FC = () => {
           backgroundRepeat: 'no-repeat'
         }} />
         
-        {/* "Loading..." text that occasionally appears for nostalgia */}
-        <div className="fixed bottom-8 right-8 bg-black/50 px-3 py-1 rounded-md border border-white/20 animate-loading-flash hidden md:block">
+        {/* "Loading..." text that occasionally appears for nostalgia - moved to top z-index */}
+        <div className="fixed top-4 right-4 bg-black/80 px-3 py-1 rounded-md border border-white/40 animate-loading-flash hidden md:block z-[9999]">
           <span className="text-sm text-green-400 font-mono">Loading...</span>
         </div>
       </div>
@@ -254,15 +261,6 @@ const RetroGameEffects: React.FC = () => {
         <div className="text-xs font-mono text-bukal-primary/70">LIVES: 3</div>
         <div className="text-xs font-mono text-bukal-primary/70 animate-pixel-blink">PRESS SPACE TO CONTINUE</div>
       </div>
-      
-      {/* Music toggle button */}
-      <button
-        onClick={toggleBackgroundMusic}
-        className="fixed bottom-16 right-4 z-40 bg-bukal-primary text-white rounded-full w-10 h-10 flex items-center justify-center border-2 border-white/30 hover:bg-bukal-accent transition-colors shadow-md"
-        aria-label={bgMusicPlaying ? "Pause Music" : "Play Music"}
-      >
-        {bgMusicPlaying ? "🔊" : "🔈"}
-      </button>
     </React.Fragment>
   );
 };
