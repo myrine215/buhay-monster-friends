@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { Menu, X, Home, Users, Phone, Heart } from "lucide-react";
+import { Menu, X, Home, Users, Phone, Heart, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Navigation = () => {
@@ -46,6 +46,10 @@ const Navigation = () => {
               <Users className="mr-1 h-4 w-4" />
               <span>About</span>
             </Link>
+            <Link to="/programs" className="flex items-center hover:text-bukal-accent bg-bukal-secondary/60 px-3 py-2 rounded-lg border-2 border-white/30 transition-all hover:scale-105">
+              <BookOpen className="mr-1 h-4 w-4" />
+              <span>Programs</span>
+            </Link>
             <Link to="/contact" className="flex items-center hover:text-bukal-accent bg-bukal-secondary/60 px-3 py-2 rounded-lg border-2 border-white/30 transition-all hover:scale-105">
               <Phone className="mr-1 h-4 w-4" />
               <span>Contact</span>
@@ -88,6 +92,14 @@ const Navigation = () => {
               >
                 <Users className="mr-2 h-5 w-5" />
                 <span>About Us</span>
+              </Link>
+              <Link 
+                to="/programs" 
+                className="flex items-center p-2 rounded-lg bg-bukal-primary/80 border-2 border-white/20 hover:bg-bukal-primary hover:text-white transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                <BookOpen className="mr-2 h-5 w-5" />
+                <span>Programs</span>
               </Link>
               <Link 
                 to="/contact" 

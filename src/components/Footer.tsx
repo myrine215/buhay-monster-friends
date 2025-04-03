@@ -23,73 +23,57 @@ const Footer = () => {
   
   return (
     <footer className="bg-bukal-primary text-white py-12 rounded-t-3xl border-t-4 border-bukal-secondary relative overflow-hidden">
-      {/* Static Clouds - Only show on desktop for better performance */}
-      {!isMobile && (
-        <div className="absolute w-full h-16 top-0 transform -translate-y-full overflow-hidden">
-          <div className="static-cloud" style={{ left: '10%', top: '0' }}></div>
-          <div className="static-cloud" style={{ left: '40%', top: '0' }}></div>
-          <div className="static-cloud" style={{ left: '70%', top: '0' }}></div>
-        </div>
-      )}
+      {/* Simple cloud shapes */}
+      <div className="absolute inset-0">
+        <div className="absolute w-32 h-16 bg-white/10 rounded-full" style={{ left: '10%', top: '20%' }}></div>
+        <div className="absolute w-40 h-20 bg-white/10 rounded-full" style={{ left: '40%', top: '30%' }}></div>
+        <div className="absolute w-28 h-14 bg-white/10 rounded-full" style={{ left: '70%', top: '25%' }}></div>
+        <div className="absolute w-36 h-18 bg-white/10 rounded-full" style={{ left: '20%', top: '40%' }}></div>
+        <div className="absolute w-24 h-12 bg-white/10 rounded-full" style={{ left: '60%', top: '35%' }}></div>
+      </div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col items-center">
-          <div className="text-center mb-8">
-            <div className="flex items-center justify-center mb-4">
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mr-3 border-4 border-bukal-accent">
-                <span className="text-bukal-primary text-3xl font-cartoon font-bold">B</span>
-              </div>
-            </div>
-            <h2 className="text-2xl md:text-3xl font-cartoon font-bold">
-              Bukal ng Buhay Foundation
-            </h2>
-            <div className="mt-4 bg-bukal-primary/40 p-4 rounded-xl backdrop-blur-sm">
-              <p className="text-xl">Reaching Orphans for 21 Years</p>
-              <p className="text-lg">Bringing Joy & Purpose for the future.</p>
-            </div>
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-8 max-w-4xl mx-auto">
+          <div className="text-center md:text-left">
+            <h3 className="font-cartoon font-bold text-xl mb-4">Quick Links</h3>
+            <ul className="space-y-2">
+              <li><Link to="/" className="hover:text-bukal-accent transition-colors">Home</Link></li>
+              <li><Link to="/about" className="hover:text-bukal-accent transition-colors">About Us</Link></li>
+              <li><Link to="/contact" className="hover:text-bukal-accent transition-colors">Contact Us</Link></li>
+              <li><Link to="/donate" className="hover:text-bukal-accent transition-colors">Donate</Link></li>
+            </ul>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-4xl mb-8">
-            <div className="text-center">
-              <h3 className="font-cartoon font-bold text-xl mb-4">Quick Links</h3>
-              <ul className="space-y-2">
-                <li><Link to="/" className="hover:text-bukal-accent transition-colors">Home</Link></li>
-                <li><Link to="/about" className="hover:text-bukal-accent transition-colors">About Us</Link></li>
-                <li><Link to="/contact" className="hover:text-bukal-accent transition-colors">Contact Us</Link></li>
-                <li><Link to="/donate" className="hover:text-bukal-accent transition-colors">Donate</Link></li>
-              </ul>
-            </div>
-            
-            <div className="text-center">
-              <h3 className="font-cartoon font-bold text-xl mb-4">Contact</h3>
-              <address className="not-italic">
-                <p>#403, Brgy Malamig</p>
-                <p>Bustos, Bulacan, Philippines</p>
-                <p className="mt-2">menozaangelita693@gmail.com</p>
-                <p>0917-822-1322</p>
-              </address>
-            </div>
-            
-            <div className="text-center">
-              <h3 className="font-cartoon font-bold text-xl mb-4">Follow Us</h3>
-              <div className="flex justify-center space-x-4">
-                <a href="#" className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/40 transition-colors">
-                  <span className="text-xl">📱</span>
-                </a>
-                <a href="#" className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/40 transition-colors">
-                  <span className="text-xl">📘</span>
-                </a>
-                <a href="#" className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/40 transition-colors">
-                  <span className="text-xl">📸</span>
-                </a>
-              </div>
-            </div>
+          <div className="text-center md:text-left">
+            <h3 className="font-cartoon font-bold text-xl mb-4">Contact</h3>
+            <address className="not-italic">
+              <p>#403, Brgy Malamig</p>
+              <p>Bustos, Bulacan, Philippines</p>
+              <p className="mt-2">menozaangelita693@gmail.com</p>
+              <p>0917-822-1322</p>
+            </address>
           </div>
           
-          <div className="flex items-center">
-            <Heart className="text-bukal-accent h-5 w-5 mr-2" fill="#FFC107" />
-            <p>&copy; 2023 Bukal ng Buhay Foundation. All Rights Reserved.</p>
+          <div className="text-center md:text-left">
+            <h3 className="font-cartoon font-bold text-xl mb-4">Follow Us</h3>
+            <div className="flex justify-center md:justify-start space-x-4">
+              <a href="#" className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/40 transition-colors">
+                <span className="text-xl">📱</span>
+              </a>
+              <a href="#" className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/40 transition-colors">
+                <span className="text-xl">📘</span>
+              </a>
+              <a href="#" className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/40 transition-colors">
+                <span className="text-xl">📸</span>
+              </a>
+            </div>
           </div>
+        </div>
+        
+        <div className="mt-8 text-center">
+          <p className="text-sm">
+            © {new Date().getFullYear()} Bukal ng Buhay Foundation. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
