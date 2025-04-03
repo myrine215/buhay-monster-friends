@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,14 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				bukal: {
+					"primary": "#4CAF50",
+					"secondary": "#A5D6A7",
+					"accent": "#FFC107",
+					"background": "#E8F5E9",
+					"text": "#1B5E20",
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +92,33 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0)'
+					},
+					'50%': {
+						transform: 'translateY(-10px)'
+					}
+				},
+				'bounce-slight': {
+					'0%, 100%': {
+						transform: 'translateY(0)'
+					},
+					'50%': {
+						transform: 'translateY(-5px)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'float': 'float 6s ease-in-out infinite',
+				'bounce-slight': 'bounce-slight 2s ease-in-out infinite'
+			},
+			fontFamily: {
+				'cartoon': ['Comic Sans MS', 'Comic Sans', 'cursive'],
+				'rounded': ['Varela Round', 'system-ui', 'sans-serif'],
 			}
 		}
 	},
