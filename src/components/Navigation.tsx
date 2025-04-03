@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X, Home, Users, Phone, Heart } from "lucide-react";
@@ -17,9 +16,9 @@ const Navigation = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <div className="w-12 h-12 bg-white rounded-lg border-4 border-bukal-accent flex items-center justify-center mr-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)]">
-              <span className="text-bukal-primary text-2xl font-bold font-pixel">B</span>
+              <span className="text-bukal-primary text-2xl font-bold font-cartoon">B</span>
             </div>
-            <span className="font-pixel text-xl md:text-2xl font-bold drop-shadow-[2px_2px_0px_rgba(0,0,0,0.3)]">
+            <span className="font-cartoon text-xl md:text-2xl font-bold drop-shadow-[2px_2px_0px_rgba(0,0,0,0.3)]">
               Bukal ng Buhay
             </span>
           </div>

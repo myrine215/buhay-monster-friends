@@ -41,11 +41,11 @@ const HeroSection = () => {
               <span className="text-bukal-primary text-xl font-bold">❤️</span>
             </div>
           </div>
-          <h1 className="text-3xl md:text-5xl font-pixel font-bold text-bukal-primary mb-6 drop-shadow-[2px_2px_0px_rgba(0,0,0,0.3)]">
+          <h1 className="text-3xl md:text-5xl font-cartoon font-bold text-bukal-primary mb-6 drop-shadow-[2px_2px_0px_rgba(0,0,0,0.3)]">
             Help Change <span className="text-bukal-accent">A Child's</span> World
           </h1>
           <div className="mb-8 bg-white/90 mx-4 md:mx-auto backdrop-blur-sm p-6 rounded-xl retro-box">
-            <p className="text-lg md:text-xl font-pixel">
+            <p className="text-lg md:text-xl font-cartoon">
               God doesn't call you to help all 153,000,000 orphans worldwide. But you can help one. 
               And for that one child, you can change the world.
             </p>
@@ -54,7 +54,7 @@ const HeroSection = () => {
               God calls us to care for these children who are close to His heart.
             </p>
           </div>
-          <Button className="retro-button font-pixel text-lg px-8 py-6 animate-bounce-slight">
+          <Button className="retro-button font-cartoon text-lg px-8 py-6 animate-bounce-slight">
             <Heart className="mr-2 h-6 w-6" fill="white" />
             <span>Make a Difference Today</span>
           </Button>

@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap'); /* Pixel font for headers */
 
@@ -99,7 +98,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-pixel;
+    @apply font-cartoon;
   }
 
   .cartoon-card {

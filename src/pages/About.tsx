@@ -8,14 +8,14 @@ const About = () => {
       <Navigation />
       <main className="flex-grow">
         <div className="container mx-auto py-16 px-4">
-          <h1 className="text-3xl md:text-5xl font-pixel font-bold text-bukal-primary text-center mb-8 drop-shadow-[2px_2px_0px_rgba(0,0,0,0.3)]">
+          <h1 className="text-3xl md:text-5xl font-cartoon font-bold text-bukal-primary text-center mb-8 drop-shadow-[2px_2px_0px_rgba(0,0,0,0.3)]">
             About <span className="text-bukal-accent">Us</span>
           </h1>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
             {/* Mission */}
             <div className="retro-box bg-white/90 p-6 rounded-xl">
-              <div className="bg-bukal-primary text-white py-2 px-4 rounded-lg mb-4 inline-block font-pixel">
+              <div className="bg-bukal-primary text-white py-2 px-4 rounded-lg mb-4 inline-block font-cartoon">
                 <h2 className="text-2xl font-bold">MISSION</h2>
               </div>
               <p className="mb-4">
@@ -28,7 +28,7 @@ const About = () => {
             
             {/* Vision */}
             <div className="retro-box bg-white/90 p-6 rounded-xl">
-              <div className="bg-bukal-accent text-white py-2 px-4 rounded-lg mb-4 inline-block font-pixel">
+              <div className="bg-bukal-accent text-white py-2 px-4 rounded-lg mb-4 inline-block font-cartoon">
                 <h2 className="text-2xl font-bold">VISION</h2>
               </div>
               <p className="mb-4">
@@ -42,7 +42,7 @@ const About = () => {
           
           {/* Our Founder */}
           <div className="overflow-hidden rounded-xl retro-box max-w-4xl mx-auto mb-16">
-            <div className="bg-bukal-primary text-white py-3 px-6 font-pixel">
+            <div className="bg-bukal-primary text-white py-3 px-6 font-cartoon">
               <h2 className="text-2xl font-bold">Our Founder</h2>
             </div>
             <div className="p-6">
@@ -55,7 +55,7 @@ const About = () => {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <h3 className="text-xl font-bold text-center mt-4 font-pixel text-bukal-primary">Nanay Letty</h3>
+                  <h3 className="text-xl font-bold text-center mt-4 font-cartoon text-bukal-primary">Nanay Letty</h3>
                 </div>
                 <div className="flex-1">
                   <p className="mb-4">
@@ -74,7 +74,7 @@ const About = () => {
           
           {/* Our Wards */}
           <div className="overflow-hidden rounded-xl retro-box max-w-4xl mx-auto mb-16">
-            <div className="bg-bukal-accent text-white py-3 px-6 font-pixel">
+            <div className="bg-bukal-accent text-white py-3 px-6 font-cartoon">
               <h2 className="text-2xl font-bold">Our Wards</h2>
             </div>
             <div className="p-6">
@@ -82,11 +82,11 @@ const About = () => {
                 {[1, 2, 3].map((ward) => (
                   <div key={ward} className="retro-box p-4 bg-white text-center animate-float rounded-xl" style={{ animationDelay: `${ward * 0.2}s` }}>
                     <div className="w-24 h-24 mx-auto mb-4 bg-bukal-secondary/20 rounded-full flex items-center justify-center">
-                      <span className="text-4xl font-pixel text-bukal-primary">
+                      <span className="text-4xl font-cartoon text-bukal-primary">
                         {ward}
                       </span>
                     </div>
-                    <h3 className="text-xl font-bold text-bukal-primary mb-2 font-pixel">Ward {ward}</h3>
+                    <h3 className="text-xl font-bold text-bukal-primary mb-2 font-cartoon">Ward {ward}</h3>
                     <p>Ward Name</p>
                   </div>
                 ))}

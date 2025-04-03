@@ -9,19 +9,19 @@ const Contact = () => {
       <Navigation />
       <main className="flex-grow">
         <div className="container mx-auto py-16 px-4">
-          <h1 className="text-3xl md:text-5xl font-pixel font-bold text-bukal-primary text-center mb-8 drop-shadow-[2px_2px_0px_rgba(0,0,0,0.3)]">
+          <h1 className="text-3xl md:text-5xl font-cartoon font-bold text-bukal-primary text-center mb-8 drop-shadow-[2px_2px_0px_rgba(0,0,0,0.3)]">
             Contact <span className="text-bukal-accent">Us</span>
           </h1>
           
           <div className="retro-box max-w-4xl mx-auto mb-16">
             <div className="text-center p-6">
-              <p className="text-2xl font-pixel text-bukal-primary mb-4">
+              <p className="text-2xl font-cartoon text-bukal-primary mb-4">
                 Please contact us any time!
               </p>
               <p className="text-xl mb-8">
                 We would love to hear from you!
               </p>
-              <p className="text-lg font-medium text-bukal-accent mb-8 font-pixel">
+              <p className="text-lg font-medium text-bukal-accent mb-8 font-cartoon">
                 For general inquiries, donations, and volunteer opportunities
               </p>
               
@@ -30,7 +30,7 @@ const Contact = () => {
                   <div className="w-16 h-16 bg-bukal-primary rounded-full flex items-center justify-center mb-4">
                     <Mail className="h-8 w-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-pixel font-bold text-bukal-primary mb-2">Email Us</h3>
+                  <h3 className="text-xl font-cartoon font-bold text-bukal-primary mb-2">Email Us</h3>
                   <a href="mailto:menozaangelita693@gmail.com" className="text-bukal-accent hover:underline">
                     menozaangelita693@gmail.com
                   </a>
@@ -40,7 +40,7 @@ const Contact = () => {
                   <div className="w-16 h-16 bg-bukal-accent rounded-full flex items-center justify-center mb-4">
                     <Phone className="h-8 w-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-pixel font-bold text-bukal-primary mb-2">Call Us</h3>
+                  <h3 className="text-xl font-cartoon font-bold text-bukal-primary mb-2">Call Us</h3>
                   <a href="tel:09178221322" className="text-bukal-accent hover:underline">
                     0917-822-1322
                   </a>
@@ -52,7 +52,7 @@ const Contact = () => {
                   <div className="w-16 h-16 bg-bukal-primary rounded-full flex items-center justify-center mb-4">
                     <Facebook className="h-8 w-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-pixel font-bold text-bukal-primary mb-2">Follow Us</h3>
+                  <h3 className="text-xl font-cartoon font-bold text-bukal-primary mb-2">Follow Us</h3>
                   <p className="text-bukal-accent">Bukal ng Buhay Foundation</p>
                 </div>
                 
@@ -60,7 +60,7 @@ const Contact = () => {
                   <div className="w-16 h-16 bg-bukal-accent rounded-full flex items-center justify-center mb-4">
                     <MapPin className="h-8 w-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-pixel font-bold text-bukal-primary mb-2">Visit Us</h3>
+                  <h3 className="text-xl font-cartoon font-bold text-bukal-primary mb-2">Visit Us</h3>
                   <p className="text-bukal-accent text-center">
                     #403, Brgy Malamig, Bustos, Bulacan, Philippines
                   </p>
@@ -71,7 +71,7 @@ const Contact = () => {
           
           {/* Map Section */}
           <div className="overflow-hidden rounded-xl retro-box max-w-4xl mx-auto mb-16">
-            <div className="bg-bukal-primary text-white py-3 px-6 font-pixel">
+            <div className="bg-bukal-primary text-white py-3 px-6 font-cartoon">
               <h2 className="text-2xl font-bold">Find Us</h2>
             </div>
             <div className="p-6">
