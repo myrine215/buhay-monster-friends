@@ -17,24 +17,24 @@ const Navigation = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <div className="w-12 h-12 bg-white rounded-lg border-4 border-bukal-accent flex items-center justify-center mr-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)]">
-              <span className="text-bukal-primary text-2xl font-cartoon font-bold pixelated">B</span>
+              <span className="text-bukal-primary text-2xl font-bold font-pixel">B</span>
             </div>
-            <span className="font-cartoon text-xl md:text-2xl font-bold drop-shadow-[2px_2px_0px_rgba(0,0,0,0.3)]">
+            <span className="font-pixel text-xl md:text-2xl font-bold drop-shadow-[2px_2px_0px_rgba(0,0,0,0.3)]">
               Bukal ng Buhay
             </span>
           </div>
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-4">
-            <Link to="/" className="flex items-center hover:text-bukal-accent bg-bukal-secondary/60 px-3 py-2 rounded-lg border-2 border-white/30 transition-all hover:scale-105 whitespace-nowrap">
+            <Link to="/" className="flex items-center hover:text-bukal-accent bg-bukal-secondary/60 px-3 py-2 rounded-lg border-2 border-white/30 transition-all hover:scale-105">
               <Home className="mr-1 h-4 w-4" />
               <span>Home</span>
             </Link>
-            <Link to="/about" className="flex items-center hover:text-bukal-accent bg-bukal-secondary/60 px-3 py-2 rounded-lg border-2 border-white/30 transition-all hover:scale-105 whitespace-nowrap">
+            <Link to="/about" className="flex items-center hover:text-bukal-accent bg-bukal-secondary/60 px-3 py-2 rounded-lg border-2 border-white/30 transition-all hover:scale-105">
               <Users className="mr-1 h-4 w-4" />
-              <span>About Us</span>
+              <span>About</span>
             </Link>
-            <Link to="/contact" className="flex items-center hover:text-bukal-accent bg-bukal-secondary/60 px-3 py-2 rounded-lg border-2 border-white/30 transition-all hover:scale-105 whitespace-nowrap">
+            <Link to="/contact" className="flex items-center hover:text-bukal-accent bg-bukal-secondary/60 px-3 py-2 rounded-lg border-2 border-white/30 transition-all hover:scale-105">
               <Phone className="mr-1 h-4 w-4" />
               <span>Contact</span>
             </Link>

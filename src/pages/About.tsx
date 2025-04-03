@@ -15,7 +15,7 @@ const About = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
             {/* Mission */}
-            <div className="retro-box bg-white/90 p-6">
+            <div className="retro-box bg-white/90 p-6 rounded-xl">
               <div className="bg-bukal-primary text-white py-2 px-4 rounded-lg mb-4 inline-block font-pixel">
                 <h2 className="text-2xl font-bold">MISSION</h2>
               </div>
@@ -28,7 +28,7 @@ const About = () => {
             </div>
             
             {/* Vision */}
-            <div className="retro-box bg-white/90 p-6">
+            <div className="retro-box bg-white/90 p-6 rounded-xl">
               <div className="bg-bukal-accent text-white py-2 px-4 rounded-lg mb-4 inline-block font-pixel">
                 <h2 className="text-2xl font-bold">VISION</h2>
               </div>
@@ -42,14 +42,14 @@ const About = () => {
           </div>
           
           {/* Our Founder */}
-          <div className="retro-box max-w-4xl mx-auto mb-16">
+          <div className="retro-box max-w-4xl mx-auto mb-16 rounded-xl">
             <div className="bg-bukal-primary text-white py-3 px-6 rounded-t-xl font-pixel">
               <h2 className="text-2xl font-bold">Our Founder</h2>
             </div>
             <div className="p-6">
               <div className="flex flex-col md:flex-row items-center mb-8">
                 <div className="mb-6 md:mb-0 md:mr-8">
-                  <div className="w-40 h-40 rounded-full retro-box overflow-hidden mx-auto">
+                  <div className="w-40 h-40 rounded-full overflow-hidden mx-auto retro-box">
                     <img 
                       src="https://images.unsplash.com/photo-1566616213894-2d4e1baee5d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" 
                       alt="Nanay Letty" 
@@ -74,21 +74,21 @@ const About = () => {
           </div>
           
           {/* Our Wards */}
-          <div className="retro-box max-w-4xl mx-auto mb-16">
+          <div className="retro-box max-w-4xl mx-auto mb-16 rounded-xl">
             <div className="bg-bukal-accent text-white py-3 px-6 rounded-t-xl font-pixel">
               <h2 className="text-2xl font-bold">Our Wards</h2>
             </div>
             <div className="p-6">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[1, 2, 3].map((ward) => (
-                  <div key={ward} className="retro-box p-4 bg-white text-center animate-float" style={{ animationDelay: `${ward * 0.2}s` }}>
+                  <div key={ward} className="retro-box p-4 bg-white text-center animate-float rounded-xl" style={{ animationDelay: `${ward * 0.2}s` }}>
                     <div className="w-24 h-24 mx-auto mb-4 bg-bukal-secondary/20 rounded-full flex items-center justify-center">
                       <span className="text-4xl font-pixel text-bukal-primary">
                         {ward}
                       </span>
                     </div>
                     <h3 className="text-xl font-bold text-bukal-primary mb-2 font-pixel">Ward {ward}</h3>
-                    <p className="text-gray-600">Ward Name</p>
+                    <p>Ward Name</p>
                   </div>
                 ))}
               </div>
@@ -104,7 +104,7 @@ const About = () => {
             </div>
           </div>
           
-          <div className="text-center text-2xl font-pixel text-bukal-accent mb-8 pixel-border inline-block mx-auto px-6 py-2">
+          <div className="text-center text-2xl font-pixel text-bukal-accent mb-8 inline-block mx-auto px-6 py-2">
             Bringing Joy & Purpose for the future.
           </div>
         </div>

@@ -163,7 +163,6 @@ export default {
 				'marquee': 'marquee 25s linear infinite'
 			},
 			fontFamily: {
-				'cartoon': ['Comic Sans MS', 'Comic Sans', 'cursive'],
 				'rounded': ['Varela Round', 'system-ui', 'sans-serif'],
 				'pixel': ['VT323', 'monospace'],
 			}

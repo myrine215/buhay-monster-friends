@@ -76,12 +76,12 @@ const Contact = () => {
               <h2 className="text-2xl font-bold">Find Us</h2>
             </div>
             <div className="p-6">
-              <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden retro-box">
+              <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden">
                 <iframe
                   className="w-full h-72"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3855.3975091013227!2d120.90896287569057!3d14.935522674833717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3396520e85ac5e65%3A0xf7d23b3c49392932!2sBrgy%20Malamig%2C%20Bustos%2C%20Bulacan!5e0!3m2!1sen!2sph!4v1710175656989!5m2!1sen!2sph"
-                  style={{ border: "0" }}
-                  allowFullScreen=""
+                  style={{ border: 0 }}
+                  allowFullScreen={false}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
@@ -89,7 +89,7 @@ const Contact = () => {
             </div>
           </div>
           
-          <div className="text-center text-2xl font-pixel text-bukal-accent mb-8 pixel-border inline-block mx-auto px-6 py-2">
+          <div className="text-center text-2xl font-pixel text-bukal-accent mb-8 inline-block mx-auto px-6 py-2">
             Bringing Joy & Purpose for the future.
           </div>
         </div>

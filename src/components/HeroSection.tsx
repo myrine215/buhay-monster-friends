@@ -8,6 +8,7 @@ const HeroSection = () => {
     <section className="relative py-16 md:py-24 px-4 overflow-hidden">
       {/* Game-style background */}
       <div className="absolute inset-0 bg-bukal-background z-0">
+        {/* Background patterns for game-like feel */}
         <div className="absolute inset-0 bg-repeat opacity-20" 
              style={{backgroundImage: "url('data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234CAF50' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')"}}></div>
         
@@ -24,7 +25,7 @@ const HeroSection = () => {
       <div className="absolute top-10 left-10 w-20 h-20 bg-bukal-secondary rounded-full opacity-60 animate-float"></div>
       <div className="absolute -bottom-5 right-10 w-16 h-16 bg-bukal-accent rounded-full opacity-40 animate-float" style={{ animationDelay: '1s' }}></div>
       <div className="absolute top-40 right-20 w-12 h-12 bg-bukal-primary rounded-full opacity-30 animate-float" style={{ animationDelay: '2s' }}></div>
-      <div className="absolute bottom-20 left-20 w-8 h-8 bg-bukal-primary opacity-30 pixel-border animate-pixel-pulse" style={{ animationDelay: '0.5s' }}></div>
+      <div className="absolute bottom-20 left-20 w-8 h-8 bg-bukal-primary opacity-30 animate-pixel-pulse" style={{ animationDelay: '0.5s' }}></div>
       
       <div className="container mx-auto relative z-10">
         <div className="text-center max-w-3xl mx-auto">
@@ -35,16 +36,16 @@ const HeroSection = () => {
                 alt="Green landscape" 
                 className="object-cover w-full h-full"
               />
-              <div className="absolute inset-0 border-4 border-white/30 rounded-full pixelated"></div>
+              <div className="absolute inset-0 border-4 border-white/30 rounded-full"></div>
             </div>
-            <div className="absolute -top-3 -right-3 bg-white rounded-full w-10 h-10 flex items-center justify-center border-2 border-bukal-accent pixel-border">
+            <div className="absolute -top-3 -right-3 bg-white rounded-full w-10 h-10 flex items-center justify-center border-2 border-bukal-accent">
               <span className="text-bukal-primary text-xl font-bold">❤️</span>
             </div>
           </div>
           <h1 className="text-3xl md:text-5xl font-pixel font-bold text-bukal-primary mb-6 drop-shadow-[2px_2px_0px_rgba(0,0,0,0.3)]">
             Help Change <span className="text-bukal-accent">A Child's</span> World
           </h1>
-          <div className="mb-8 retro-box bg-white/90 mx-4 md:mx-auto backdrop-blur-sm p-6">
+          <div className="mb-8 bg-white/90 mx-4 md:mx-auto backdrop-blur-sm p-6 rounded-xl retro-box">
             <p className="text-lg md:text-xl font-pixel">
               God doesn't call you to help all 153,000,000 orphans worldwide. But you can help one. 
               And for that one child, you can change the world.
