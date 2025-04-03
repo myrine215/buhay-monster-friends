@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Heart } from "lucide-react";
@@ -14,7 +13,7 @@ const HeroSection = () => {
         
         {/* Background image - stylized to look like a 2008 game background */}
         <div className="absolute inset-0 opacity-30 bg-center bg-cover" 
-             style={{backgroundImage: "url('https://images.unsplash.com/photo-1559668715-4b33346a9b3f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"}}></div>
+             style={{backgroundImage: "url('/media/Hero.png')"}}></div>
         
         {/* Overlay grid pattern like old pixel games */}
         <div className="absolute inset-0 bg-repeat opacity-10" 
@@ -32,8 +31,8 @@ const HeroSection = () => {
           <div className="mb-6 relative inline-block">
             <div className="w-24 h-24 md:w-32 md:h-32 overflow-hidden border-4 border-bukal-primary mx-auto relative rounded-full">
               <img 
-                src="https://images.unsplash.com/photo-1501854140801-50d01698950b" 
-                alt="Green landscape" 
+                src="/media/IMG_5002.jpg" 
+                alt="Hero Image" 
                 className="object-cover w-full h-full"
               />
               <div className="absolute inset-0 border-4 border-white/30 rounded-full"></div>

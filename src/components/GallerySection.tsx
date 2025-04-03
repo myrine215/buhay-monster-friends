@@ -1,46 +1,50 @@
-
 import React, { useState } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 const GallerySection = () => {
   const [currentPage, setCurrentPage] = useState(0);
   
+  // Using the IMG_5001-IMG50010 images
   const images = [
     {
-      src: "https://images.unsplash.com/photo-1501854140801-50d01698950b",
-      alt: "Green landscape"
+      src: "/media/IMG_5001.jpg",
+      alt: "Gallery Image 1"
     },
     {
-      src: "https://images.unsplash.com/photo-1615729947596-a598e5de0ab3",
-      alt: "Children playing"
+      src: "/media/IMG_5002.jpg",
+      alt: "Gallery Image 2"
     },
     {
-      src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-      alt: "Foundation activities"
+      src: "/media/IMG_5003.jpg",
+      alt: "Gallery Image 3"
     },
     {
-      src: "https://images.unsplash.com/photo-1615729947596-a598e5de0ab3",
-      alt: "Children smiling"
+      src: "/media/IMG_5004.jpg",
+      alt: "Gallery Image 4"
     },
     {
-      src: "https://images.unsplash.com/photo-1501854140801-50d01698950b",
-      alt: "Outdoor activities"
+      src: "/media/IMG_5005.jpg",
+      alt: "Gallery Image 5"
     },
     {
-      src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-      alt: "Classroom"
+      src: "/media/IMG_5006.jpg",
+      alt: "Gallery Image 6"
     },
     {
-      src: "https://images.unsplash.com/photo-1501854140801-50d01698950b",
-      alt: "Playtime"
+      src: "/media/IMG_5007.jpg",
+      alt: "Gallery Image 7"
     },
     {
-      src: "https://images.unsplash.com/photo-1615729947596-a598e5de0ab3",
-      alt: "Group photo"
+      src: "/media/IMG_5008.jpg",
+      alt: "Gallery Image 8"
     },
     {
-      src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-      alt: "Celebration"
+      src: "/media/IMG_5009.jpg",
+      alt: "Gallery Image 9"
+    },
+    {
+      src: "/media/IMG_50010.jpg",
+      alt: "Gallery Image 10"
     }
   ];
 
