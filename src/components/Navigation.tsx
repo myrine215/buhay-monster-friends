@@ -32,10 +32,12 @@ const Navigation = () => {
               <Phone className="mr-1 h-4 w-4" />
               <span>Contact Us</span>
             </Link>
-            <Button className="cartoon-button flex items-center">
-              <Heart className="mr-1 h-5 w-5" />
-              <span>Donate</span>
-            </Button>
+            <Link to="/donate">
+              <Button className="cartoon-button flex items-center">
+                <Heart className="mr-1 h-5 w-5" />
+                <span>Donate</span>
+              </Button>
+            </Link>
           </div>
           
           {/* Mobile Menu Button */}
@@ -75,13 +77,17 @@ const Navigation = () => {
                 <Phone className="mr-2 h-5 w-5" />
                 <span>Contact Us</span>
               </Link>
-              <Button 
-                className="cartoon-button flex items-center justify-center"
+              <Link 
+                to="/donate" 
                 onClick={() => setIsOpen(false)}
               >
-                <Heart className="mr-2 h-5 w-5" />
-                <span>Donate</span>
-              </Button>
+                <Button 
+                  className="cartoon-button flex items-center justify-center w-full"
+                >
+                  <Heart className="mr-2 h-5 w-5" />
+                  <span>Donate</span>
+                </Button>
+              </Link>
             </div>
           </div>
         )}
