@@ -5,12 +5,77 @@ import * as React from 'react';
  */
 const RetroGameEffects: React.FC = () => {
   const [isLoading, setIsLoading] = React.useState(true);
+  const [bgMusicPlaying, setBgMusicPlaying] = React.useState(false);
+  const audioRef = React.useRef<HTMLAudioElement | null>(null);
   
+  // Add click sound effect function
+  const playClickSound = React.useCallback(() => {
+    try {
+      const clickSound = new Audio();
+      clickSound.volume = 0.2;
+      // Short base64 encoded click sound
+      clickSound.src = 'data:audio/wav;base64,UklGRlQFAABXQVZFZm10IBAAAAABAAEARKwAAESsAAABAAgAZGF0YTAFAACAgICAgICAgICAgICAgICAgICAgICBgYGBgoGCgoKDg4OEhISFhYWGhoaHh4eIiIiJiYmKioqLi4uMjIyNjY2Ojo6Pj4+QkJCRkZGSkpKTk5OUlJSVlZWWlpaXl5eYmJiZmZmampqbm5ucnJydnZ2enp6fn5+goKChoaGioqKjo6OkpKSlpaWmpqanp6eoqKipqamqqqqrq6usrKytra2urq6vr6+wsLCxsbGysrKzs7O0tLS1tbW2tra3t7e4uLi5ubm6urq7u7u8vLy9vb2+vr6/v7/AwMDBwcHCwsLDw8PExMTFxcXGxsbHx8fIyMjJycnKysrLy8vMzMzNzc3Ozs7Pz8/Q0NDR0dHS0tLT09PU1NTV1dXW1tbX19fY2NjZ2dna2trb29vc3Nzd3d3e3t7f39/g4ODh4eHi4uLj4+Pk5OTl5eXm5ubn5+fo6Ojp6enq6urr6+vs7Ozt7e3u7u7v7+/w8PDx8fHy8vLz8/P09PT19fX29vb39/f4+Pj5+fn6+vr7+/v8/Pz9/f3+/v7///+AgICAgICAgICAgICAgICAgICAgICBgYGBgoGCgoKDg4OEhISFhYWGhoaHh4eIiIiJiYmKioqLi4uMjIyNjY2Oj';
+      clickSound.play().catch(error => {
+        console.log("Browser blocked click sound autoplay");
+      });
+    } catch (error) {
+      console.log("Browser doesn't support audio playback");
+    }
+  }, []);
+
+  // Toggle background music function
+  const toggleBackgroundMusic = React.useCallback(() => {
+    if (!audioRef.current) {
+      audioRef.current = new Audio();
+      // Short base64 encoded music loop
+      audioRef.current.src = 'data:audio/mp3;base64,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BoZBoFAMAy8xpAoylpNqGQVQiMAhQQqLQAJQcYOhc2yN2BBQdGQJADCQ0FwFMLAwCKAcx4DkACALGAwcEQYDmEgKFgGPgwFB8GAgFC4IAgWFjAJBICXwTEBgETJAEIwHpBzIKCpeGAoUEBeGCRkBwAHgwdGFgCxhoFIAiGQCGgyVGxMLDoydA0AgbAYDCEQAMYNgcJDAASGAxEBQQiC6GDQDC4IBwxMi4MTTEUAAoKIwBMBAowODD+FACJRKHDpyCiYUGlGOpoZkgIHDDoEEJqYRAaAHgGYTCJgcOA8KmJQUZBIRoDHA8YLBIKDwGFB4BgUZGIxh2DAQcAgaYPAqMAcYZBQCBBcNCgBAQwzBDJoZAhEwADgQAGGAABAVTQtKwCYFgxeC3GDBPBQVMIgElRNSMAQSLDOYRCQqAQEFCowOCDIXKLAEAT///EAAYlDhSGgANCQBRIJmCwQaUCZZFRwSMMAQxP///+ypCEjTAIJgMAmsIgAjguZHARYDWBMnBAMIgILmKgeMQgIwcBUSOp5AQNPQcBDokAb8mAQGYUBAYQGhUIJAZNC0GGQQXAwJHQQKANuXEigoxPEP///zThEAAkBRAAsYRAFBYUJCoDGSoEGB46CBhECRgKBooEGrBCbr///0KAYDoA0ARgOA4YFgHAQQGYCgHiA4MtKiKm5hWjRlgC5gsCBgOARg6ExhkBZ0B6H////MAA2A5QBCqIE0wFgARBYCAKAphIFAwBmLIZGEYA//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+1GAAAA/8AAAIAAANIAAAAQAAAJFoAAAiAAAG+AAAACEAAANIAAAAQAAAaQAAAAgAAA0gAAABAAABpAAAACAAACAAAAAAAAA==';
+      audioRef.current.volume = 0.15;
+      audioRef.current.loop = true;
+    }
+    
+    if (bgMusicPlaying) {
+      audioRef.current.pause();
+      setBgMusicPlaying(false);
+    } else {
+      audioRef.current.play().catch(() => {
+        console.log("Browser blocked background music autoplay");
+      });
+      setBgMusicPlaying(true);
+    }
+  }, [bgMusicPlaying]);
+
+  // Handle clicks to play sound
+  React.useEffect(() => {
+    const handleClick = (event: MouseEvent) => {
+      playClickSound();
+      
+      // Create click effect animation
+      const clickEffect = document.createElement('div');
+      clickEffect.className = 'pixel-click-effect';
+      clickEffect.style.left = `${event.clientX}px`;
+      clickEffect.style.top = `${event.clientY}px`;
+      document.body.appendChild(clickEffect);
+      
+      // Remove the effect element after animation completes
+      setTimeout(() => {
+        if (document.body.contains(clickEffect)) {
+          document.body.removeChild(clickEffect);
+        }
+      }, 1000);
+    };
+    
+    document.addEventListener('click', handleClick);
+    
+    return () => {
+      document.removeEventListener('click', handleClick);
+    };
+  }, [playClickSound]);
+
   React.useEffect(() => {
     // Create cursor trail effect (typical of 2000s flash games)
     const cursorTrail = document.getElementById('cursor-trail');
     const dots: HTMLDivElement[] = [];
-    const maxDots = 10;
+    const maxDots = 6; // Reduced max dots for faster movement
     
     if (cursorTrail) {
       const updateCursorTrail = (e: MouseEvent) => {
@@ -21,7 +86,7 @@ const RetroGameEffects: React.FC = () => {
         cursorTrail.appendChild(dot);
         dots.push(dot);
         
-        // Fade out and remove excess dots
+        // Fade out and remove excess dots faster
         if (dots.length > maxDots) {
           const oldDot = dots.shift();
           if (oldDot) {
@@ -30,13 +95,13 @@ const RetroGameEffects: React.FC = () => {
               if (oldDot.parentNode === cursorTrail) {
                 cursorTrail.removeChild(oldDot);
               }
-            }, 300);
+            }, 150); // Reduced timeout for faster fading
           }
         }
         
-        // Fade out remaining dots gradually
+        // Fade out remaining dots more quickly
         dots.forEach((d, i) => {
-          d.style.opacity = (1 - i / maxDots).toString();
+          d.style.opacity = (1 - i / maxDots * 1.5).toString(); // Faster opacity reduction
         });
       };
       
@@ -189,6 +254,15 @@ const RetroGameEffects: React.FC = () => {
         <div className="text-xs font-mono text-bukal-primary/70">LIVES: 3</div>
         <div className="text-xs font-mono text-bukal-primary/70 animate-pixel-blink">PRESS SPACE TO CONTINUE</div>
       </div>
+      
+      {/* Music toggle button */}
+      <button
+        onClick={toggleBackgroundMusic}
+        className="fixed bottom-16 right-4 z-40 bg-bukal-primary text-white rounded-full w-10 h-10 flex items-center justify-center border-2 border-white/30 hover:bg-bukal-accent transition-colors shadow-md"
+        aria-label={bgMusicPlaying ? "Pause Music" : "Play Music"}
+      >
+        {bgMusicPlaying ? "🔊" : "🔈"}
+      </button>
     </React.Fragment>
   );
 };

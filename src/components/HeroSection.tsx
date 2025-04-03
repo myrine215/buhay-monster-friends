@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center py-6 md:py-12 px-4 overflow-hidden">
+    <section className="relative min-h-[calc(100vh-90px)] flex items-center justify-center py-0 px-4 overflow-hidden mt-0">
       {/* Game-style background */}
       <div className="absolute inset-0 bg-bukal-background z-0">
         {/* Background patterns for game-like feel - simplified for better performance */}
@@ -28,7 +28,7 @@ const HeroSection = () => {
       <div className="absolute bottom-20 left-20 w-8 h-8 bg-bukal-primary opacity-30 animate-pixel-pulse" style={{ animationDelay: '0.5s' }}></div>
       
       <div className="container mx-auto relative z-10">
-        <div className="text-center max-w-3xl mx-auto mt-0 pt-0">
+        <div className="text-center max-w-3xl mx-auto mt-0">
           <div className="mb-6 relative inline-block">
             <div className="w-24 h-24 md:w-32 md:h-32 overflow-hidden border-4 border-bukal-primary mx-auto relative rounded-full">
               <img 

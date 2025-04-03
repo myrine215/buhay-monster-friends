@@ -8,7 +8,7 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-bukal-primary text-white py-4 px-4 rounded-b-xl border-4 border-bukal-accent shadow-md sticky top-0 z-50 relative overflow-hidden">
+    <nav className="bg-bukal-primary text-white py-3 px-4 rounded-b-xl border-4 border-bukal-accent shadow-md sticky top-0 z-50 relative overflow-hidden h-[70px] flex items-center">
       {/* Pixel-style decorations */}
       <div className="absolute top-0 right-0 w-12 h-12 bg-bukal-accent opacity-30" style={{clipPath: "polygon(100% 0, 0 0, 100% 100%)"}}></div>
       <div className="absolute bottom-0 left-0 w-12 h-12 bg-bukal-accent opacity-30" style={{clipPath: "polygon(0 100%, 0 0, 100% 100%)"}}></div>
