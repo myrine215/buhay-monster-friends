@@ -4,48 +4,45 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 const GallerySection = () => {
   const [currentPage, setCurrentPage] = useState(0);
   
-  // Using the IMG_5001-IMG50010 images
+  // Using the IMG_5001-IMG_5009 images with correct file extensions
   const images = [
     {
-      src: "/media/IMG_5001.jpg",
+      src: "/media/IMG_5001.JPG",
       alt: "Gallery Image 1"
     },
     {
-      src: "/media/IMG_5002.jpg",
+      src: "/media/IMG_5002.JPG",
       alt: "Gallery Image 2"
     },
     {
-      src: "/media/IMG_5003.jpg",
+      src: "/media/IMG_5003.JPG",
       alt: "Gallery Image 3"
     },
     {
-      src: "/media/IMG_5004.jpg",
+      src: "/media/IMG_5004.JPG",
       alt: "Gallery Image 4"
     },
     {
-      src: "/media/IMG_5005.jpg",
+      src: "/media/IMG_5005.JPG",
       alt: "Gallery Image 5"
     },
     {
-      src: "/media/IMG_5006.jpg",
+      src: "/media/IMG_5006.JPG",
       alt: "Gallery Image 6"
     },
     {
-      src: "/media/IMG_5007.jpg",
+      src: "/media/IMG_5007.JPG",
       alt: "Gallery Image 7"
     },
     {
-      src: "/media/IMG_5008.jpg",
+      src: "/media/IMG_5008.JPG",
       alt: "Gallery Image 8"
     },
     {
-      src: "/media/IMG_5009.jpg",
+      src: "/media/IMG_5009.JPG",
       alt: "Gallery Image 9"
-    },
-    {
-      src: "/media/IMG_50010.jpg",
-      alt: "Gallery Image 10"
     }
+    // Removed IMG_50010.JPG as it doesn't exist in the media folder
   ];
 
   // Group images into pages of 3 for mobile, 9 for desktop

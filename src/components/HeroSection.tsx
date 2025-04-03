@@ -31,8 +31,8 @@ const HeroSection = () => {
           <div className="mb-6 relative inline-block">
             <div className="w-24 h-24 md:w-32 md:h-32 overflow-hidden border-4 border-bukal-primary mx-auto relative rounded-full">
               <img 
-                src="/media/IMG_5002.jpg" 
-                alt="Hero Image" 
+                src="/media/media.jpg" 
+                alt="Logo" 
                 className="object-cover w-full h-full"
               />
               <div className="absolute inset-0 border-4 border-white/30 rounded-full"></div>

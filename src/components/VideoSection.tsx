@@ -7,6 +7,11 @@ const VideoSection = () => {
     setPlaying(true);
   };
 
+  // Google Drive direct link - converted from share link
+  // Original: https://drive.google.com/file/d/1geY0YsYIQ5xFwCVIh0o9LSQWKF67KSpe/view?usp=drive_link
+  // Converted to direct embed link
+  const videoUrl = "https://drive.google.com/file/d/1geY0YsYIQ5xFwCVIh0o9LSQWKF67KSpe/preview";
+
   return (
     <section className="py-16 bg-gradient-to-b from-bukal-background to-bukal-secondary/30">
       <div className="container mx-auto px-4">
@@ -18,12 +23,12 @@ const VideoSection = () => {
           {/* Video Player */}
           <div className="relative pt-[56.25%] bg-gray-800 rounded-xl overflow-hidden">
             {playing ? (
-              <video 
+              <iframe 
                 className="absolute inset-0 w-full h-full"
-                src="/media/VIDEO.mp4"
-                controls
-                autoPlay
-              ></video>
+                src={videoUrl}
+                allow="autoplay"
+                allowFullScreen
+              ></iframe>
             ) : (
               <div className="absolute inset-0 flex items-center justify-center">
                 <div 
