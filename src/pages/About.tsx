@@ -50,7 +50,7 @@ const About = () => {
                 <div className="mb-6 md:mb-0 md:mr-8">
                   <div className="w-40 h-40 rounded-full overflow-hidden mx-auto retro-box">
                     <img 
-                      src="https://images.unsplash.com/photo-1566616213894-2d4e1baee5d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" 
+                      src="/media/Nanay.jpg"
                       alt="Nanay Letty" 
                       className="w-full h-full object-cover"
                     />

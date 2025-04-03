@@ -249,3 +249,192 @@
     100% { transform: translateX(200%); }
   }
 }
+
+/* Retro cursor styles */
+.retro-cursor {
+  cursor: none;
+}
+
+.retro-cursor::after {
+  content: '';
+  display: block;
+  position: fixed;
+  width: 16px;
+  height: 16px;
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1h2v2H1V1zm2 2h2v2H3V3zm2 2h2v2H5V5zm2 2h2v2H7V7zm2 2h2v2H9V9zm2 2h2v2h-2v-2z' fill='%234CAF50' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  animation: cursor-glow 2s infinite;
+}
+
+/* Pixel click effect */
+.pixel-click-effect {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 15h2v2h-2v-2zm2 2h2v2h-2v-2zm2 2h2v2h-2v-2zm2 2h2v2h-2v-2zm2-8h2v2h-2v-2zm0 8h2v2h-2v-2zm-8 0h2v2h-2v-2zm8-4h2v2h-2v-2zm-8 0h2v2h-2v-2zm4 0h2v2h-2v-2zm-4-4h2v2h-2v-2zm4 0h2v2h-2v-2z' fill='%23FFC107' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  animation: click-effect 1s forwards;
+}
+
+/* Screen flash effect on resize */
+.screen-flash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: 10000;
+  animation: screen-flash 0.15s forwards;
+}
+
+/* Animation for loading text */
+@keyframes loading-flash {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* Health bar animation */
+@keyframes health-bar {
+  0% { width: 40%; }
+  50% { width: 70%; }
+  100% { width: 40%; }
+}
+
+/* Cursor glow animation */
+@keyframes cursor-glow {
+  0%, 100% { filter: drop-shadow(0 0 1px #4CAF50); }
+  50% { filter: drop-shadow(0 0 3px #4CAF50); }
+}
+
+/* Click effect animation */
+@keyframes click-effect {
+  0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0.8; }
+  100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+}
+
+/* Screen flash animation */
+@keyframes screen-flash {
+  0% { opacity: 0.2; }
+  100% { opacity: 0; }
+}
+
+/* Additional animations for nostalgic 2000s feel */
+.animate-loading-flash {
+  animation: loading-flash 2s infinite;
+}
+
+.animate-health-bar {
+  animation: health-bar 4s infinite;
+}
+
+/* Pixel art style images */
+.pixel-art {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* Loading progress bar animation */
+@keyframes loading-progress {
+  0% { width: 0%; }
+  20% { width: 15%; }
+  40% { width: 40%; }
+  60% { width: 65%; }
+  80% { width: 85%; }
+  90% { width: 95%; }
+  100% { width: 100%; }
+}
+
+.animate-loading-progress {
+  animation: loading-progress 2.4s ease-in;
+  animation-fill-mode: both;
+}
+
+/* Ping animation delay utilities */
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+/* Animated footer clouds */
+.footer-cloud {
+  position: absolute;
+  bottom: 100%;
+  width: 100px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  animation: cloud-float 15s infinite linear;
+}
+
+.footer-cloud::before,
+.footer-cloud::after {
+  content: '';
+  position: absolute;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+.footer-cloud::before {
+  width: 50%;
+  height: 100%;
+  top: -30%;
+  left: 25%;
+}
+
+.footer-cloud::after {
+  width: 60%;
+  height: 80%;
+  top: -20%;
+  right: 10%;
+}
+
+@keyframes cloud-float {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(1000%); }
+}
+
+/* Performance optimizations */
+img, video {
+  content-visibility: auto;
+}
+
+/* Optimize animations to use the GPU */
+.animate-float,
+.animate-float-slow,
+.animate-bounce-slight,
+.animate-pixel-pulse,
+.animate-twinkle,
+.animate-loading-flash,
+.animate-loading-progress,
+.animate-health-bar,
+.animate-pixel-blink,
+.animate-ping {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
+/* Reduce animation motion for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

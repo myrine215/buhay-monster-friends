@@ -5,20 +5,20 @@ import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
-    <section className="relative py-16 md:py-24 px-4 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center py-6 md:py-12 px-4 overflow-hidden">
       {/* Game-style background */}
       <div className="absolute inset-0 bg-bukal-background z-0">
-        {/* Background patterns for game-like feel */}
-        <div className="absolute inset-0 bg-repeat opacity-20" 
-             style={{backgroundImage: "url('data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234CAF50' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')"}}></div>
+        {/* Background patterns for game-like feel - simplified for better performance */}
+        <div className="absolute inset-0 bg-repeat opacity-10" 
+             style={{backgroundImage: "url('data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%234CAF50' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4z'/%3E%3C/g%3E%3C/svg%3E')"}}></div>
         
         {/* Background image - stylized to look like a 2008 game background */}
         <div className="absolute inset-0 opacity-30 bg-center bg-cover" 
              style={{backgroundImage: "url('/media/Hero.png')"}}></div>
         
-        {/* Overlay grid pattern like old pixel games */}
-        <div className="absolute inset-0 bg-repeat opacity-10" 
-             style={{backgroundImage: "url('data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M0 0h20v20H0V0zm1 1h18v18H1V1z'/%3E%3C/g%3E%3C/svg%3E')"}}></div>
+        {/* Overlay grid pattern - simplified */}
+        <div className="absolute inset-0 bg-repeat opacity-5" 
+             style={{backgroundImage: "url('data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.4'%3E%3Cpath d='M0 0h20v20H0V0z'/%3E%3C/g%3E%3C/svg%3E')"}}></div>
       </div>
       
       {/* Decorative elements */}
@@ -28,7 +28,7 @@ const HeroSection = () => {
       <div className="absolute bottom-20 left-20 w-8 h-8 bg-bukal-primary opacity-30 animate-pixel-pulse" style={{ animationDelay: '0.5s' }}></div>
       
       <div className="container mx-auto relative z-10">
-        <div className="text-center max-w-3xl mx-auto">
+        <div className="text-center max-w-3xl mx-auto mt-0 pt-0">
           <div className="mb-6 relative inline-block">
             <div className="w-24 h-24 md:w-32 md:h-32 overflow-hidden border-4 border-bukal-primary mx-auto relative rounded-full">
               <img 

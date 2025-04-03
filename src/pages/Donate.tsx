@@ -129,16 +129,51 @@ const Donate = () => {
           {/* Banking Information */}
           <div className="overflow-hidden rounded-xl retro-box max-w-4xl mx-auto mb-16">
             <div className="bg-bukal-accent text-white py-3 px-6 font-cartoon">
-              <h2 className="text-2xl font-bold">Banking Information</h2>
+              <h2 className="text-2xl font-bold">Donation Methods</h2>
+            </div>
+            <div className="p-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Bank Transfer */}
+                <div className="retro-box p-6 bg-white rounded-xl">
+                  <h3 className="text-xl font-cartoon font-bold text-bukal-primary mb-4 text-center">Bank Transfer</h3>
+                  <div className="mb-6">
+                    <p className="mb-2 font-cartoon"><strong>Bank Name:</strong> BDO (Banco de Oro)</p>
+                    <p className="mb-2"><strong>Account Name:</strong> Bukal ng Buhay Foundation Inc.</p>
+                    <p className="mb-2"><strong>Account Number:</strong> 003840068391</p>
+                    <p><strong>Branch:</strong> Bustos, Bulacan Branch</p>
+                  </div>
+                  <div className="bg-bukal-primary/10 p-3 rounded-md">
+                    <p className="text-sm">Please email the transaction receipt to <span className="text-bukal-accent">menozaangelita693@gmail.com</span> with your name and contact details.</p>
+                  </div>
+                </div>
+
+                {/* GCash */}
+                <div className="retro-box p-6 bg-white rounded-xl">
+                  <h3 className="text-xl font-cartoon font-bold text-bukal-primary mb-4 text-center">GCash</h3>
+                  <div className="mb-6">
+                    <p className="mb-2 font-cartoon"><strong>Account Name:</strong> Angelita Menoza</p>
+                    <p className="mb-2"><strong>GCash Number:</strong> 0917-822-1322</p>
+                    <p className="mb-2"><strong>Position:</strong> Foundation Director</p>
+                  </div>
+                  <div className="bg-bukal-primary/10 p-3 rounded-md">
+                    <p className="text-sm">After sending your donation via GCash, please send a message to the same number with your name and details of your donation.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Tax Deduction Information */}
+          <div className="overflow-hidden rounded-xl retro-box max-w-4xl mx-auto mb-16">
+            <div className="bg-bukal-primary text-white py-3 px-6 font-cartoon">
+              <h2 className="text-2xl font-bold">Tax Deductible Donations</h2>
             </div>
             <div className="p-6 text-center">
-              <p className="text-lg mb-4">For direct bank transfers, please use the following information:</p>
-              
-              <div className="retro-box p-6 max-w-md mx-auto bg-white rounded-xl">
-                <p className="mb-2 font-cartoon"><strong>Bank Name:</strong> Example Bank</p>
-                <p className="mb-2"><strong>Account Name:</strong> Bukal ng Buhay Foundation Inc.</p>
-                <p className="mb-2"><strong>Account Number:</strong> 1234-5678-9012-3456</p>
-                <p><strong>Branch:</strong> Bulacan Branch</p>
+              <p className="text-lg mb-4">All donations to Bukal ng Buhay Foundation are tax-deductible.</p>
+              <p className="mb-6">We will provide official receipts for all donations that can be used for tax purposes.</p>
+              <p className="text-bukal-accent font-cartoon text-lg">100% of your donation goes directly to supporting the children in our care.</p>
+              <div className="mt-6">
+                <p className="text-sm text-gray-600">Bukal ng Buhay Foundation, Inc. is a registered non-profit organization with the Securities and Exchange Commission (SEC) and is accredited by the Department of Social Welfare and Development (DSWD).</p>
               </div>
             </div>
           </div>

@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import * as React from 'react';
+import { useState, useEffect } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 const GallerySection = () => {
   const [currentPage, setCurrentPage] = useState(0);
+  const [imagesLoaded, setImagesLoaded] = useState<boolean[]>([]);
   
   // Using the IMG_5001-IMG_5009 images with correct file extensions
   const images = [
@@ -45,6 +47,19 @@ const GallerySection = () => {
     // Removed IMG_50010.JPG as it doesn't exist in the media folder
   ];
 
+  // Initialize the imagesLoaded array
+  useEffect(() => {
+    setImagesLoaded(new Array(images.length).fill(false));
+  }, []);
+
+  const handleImageLoad = (index: number) => {
+    setImagesLoaded(prev => {
+      const newState = [...prev];
+      newState[index] = true;
+      return newState;
+    });
+  };
+
   // Group images into pages of 3 for mobile, 9 for desktop
   const imagesPerPage = 9;
   const totalPages = Math.ceil(images.length / imagesPerPage);
@@ -77,24 +92,34 @@ const GallerySection = () => {
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-1">
-            {currentImages.map((image, index) => (
-              <div 
-                key={index} 
-                className="aspect-square relative group"
-              >
-                <div className="absolute inset-2 border-4 border-dashed border-bukal-primary opacity-0 group-hover:opacity-100 z-10 transition-opacity pointer-events-none"></div>
-                <div className="retro-box p-2 aspect-square overflow-hidden h-full">
-                  <img 
-                    src={image.src} 
-                    alt={image.alt}
-                    className="w-full h-full object-cover transition-all duration-300 group-hover:scale-110"
-                  />
+            {currentImages.map((image, index) => {
+              const globalIndex = currentPage * imagesPerPage + index;
+              return (
+                <div 
+                  key={index} 
+                  className="aspect-square relative group"
+                >
+                  <div className="absolute inset-2 border-4 border-dashed border-bukal-primary opacity-0 group-hover:opacity-100 z-10 transition-opacity pointer-events-none"></div>
+                  <div className="retro-box p-2 aspect-square overflow-hidden h-full">
+                    {!imagesLoaded[globalIndex] && (
+                      <div className="w-full h-full flex items-center justify-center bg-bukal-primary/10">
+                        <div className="w-8 h-8 border-4 border-bukal-accent border-t-transparent rounded-full animate-spin"></div>
+                      </div>
+                    )}
+                    <img 
+                      src={image.src} 
+                      alt={image.alt}
+                      loading="lazy"
+                      className={`w-full h-full object-cover transition-all duration-300 group-hover:scale-110 ${imagesLoaded[globalIndex] ? 'opacity-100' : 'opacity-0'}`}
+                      onLoad={() => handleImageLoad(globalIndex)}
+                    />
+                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 bg-bukal-primary text-white p-2 opacity-0 group-hover:opacity-100 transition-opacity text-center truncate">
+                    {image.alt}
+                  </div>
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 bg-bukal-primary text-white p-2 opacity-0 group-hover:opacity-100 transition-opacity text-center truncate">
-                  {image.alt}
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
           
           <div className="flex justify-center mt-6 space-x-4">

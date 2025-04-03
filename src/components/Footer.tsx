@@ -1,12 +1,19 @@
-
-import React from 'react';
+import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { Heart } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-bukal-primary text-white py-12 rounded-t-3xl border-t-4 border-bukal-secondary">
-      <div className="container mx-auto px-4">
+    <footer className="bg-bukal-primary text-white py-12 rounded-t-3xl border-t-4 border-bukal-secondary relative overflow-hidden">
+      {/* Animated Clouds */}
+      <div className="footer-cloud" style={{ left: '5%', animationDuration: '25s', animationDelay: '0s' }}></div>
+      <div className="footer-cloud" style={{ left: '15%', animationDuration: '20s', animationDelay: '5s' }}></div>
+      <div className="footer-cloud" style={{ left: '30%', animationDuration: '22s', animationDelay: '2s' }}></div>
+      <div className="footer-cloud" style={{ left: '50%', animationDuration: '18s', animationDelay: '7s' }}></div>
+      <div className="footer-cloud" style={{ left: '70%', animationDuration: '24s', animationDelay: '4s' }}></div>
+      <div className="footer-cloud" style={{ left: '85%', animationDuration: '21s', animationDelay: '1s' }}></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col items-center">
           <div className="text-center mb-8">
             <div className="flex items-center justify-center mb-4">
@@ -36,10 +43,10 @@ const Footer = () => {
             <div className="text-center">
               <h3 className="font-cartoon font-bold text-xl mb-4">Contact</h3>
               <address className="not-italic">
-                <p>123 Charity Lane</p>
-                <p>Manila, Philippines</p>
-                <p className="mt-2">contact@bukalbuhay.org</p>
-                <p>+63 123 456 7890</p>
+                <p>#403, Brgy Malamig</p>
+                <p>Bustos, Bulacan, Philippines</p>
+                <p className="mt-2">menozaangelita693@gmail.com</p>
+                <p>0917-822-1322</p>
               </address>
             </div>
             
