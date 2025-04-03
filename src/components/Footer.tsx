@@ -1,17 +1,36 @@
 import * as React from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Heart } from 'lucide-react';
 
 const Footer = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    // Check on mount
+    checkMobile();
+    
+    // Add listener for resize
+    window.addEventListener('resize', checkMobile);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+  
   return (
     <footer className="bg-bukal-primary text-white py-12 rounded-t-3xl border-t-4 border-bukal-secondary relative overflow-hidden">
-      {/* Animated Clouds */}
-      <div className="footer-cloud" style={{ left: '5%', animationDuration: '25s', animationDelay: '0s' }}></div>
-      <div className="footer-cloud" style={{ left: '15%', animationDuration: '20s', animationDelay: '5s' }}></div>
-      <div className="footer-cloud" style={{ left: '30%', animationDuration: '22s', animationDelay: '2s' }}></div>
-      <div className="footer-cloud" style={{ left: '50%', animationDuration: '18s', animationDelay: '7s' }}></div>
-      <div className="footer-cloud" style={{ left: '70%', animationDuration: '24s', animationDelay: '4s' }}></div>
-      <div className="footer-cloud" style={{ left: '85%', animationDuration: '21s', animationDelay: '1s' }}></div>
+      {/* Animated Clouds - Only show on desktop for better performance */}
+      {!isMobile && (
+        <>
+          <div className="footer-cloud" style={{ left: '10%', animationDuration: '25s', animationDelay: '0s' }}></div>
+          <div className="footer-cloud" style={{ left: '35%', animationDuration: '22s', animationDelay: '2s' }}></div>
+          <div className="footer-cloud" style={{ left: '70%', animationDuration: '24s', animationDelay: '4s' }}></div>
+        </>
+      )}
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col items-center">
@@ -37,6 +56,7 @@ const Footer = () => {
                 <li><Link to="/" className="hover:text-bukal-accent transition-colors">Home</Link></li>
                 <li><Link to="/about" className="hover:text-bukal-accent transition-colors">About Us</Link></li>
                 <li><Link to="/contact" className="hover:text-bukal-accent transition-colors">Contact Us</Link></li>
+                <li><Link to="/donate" className="hover:text-bukal-accent transition-colors">Donate</Link></li>
               </ul>
             </div>
             

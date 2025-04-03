@@ -1,7 +1,8 @@
 import * as React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import { Mail, Phone, MapPin, Facebook, Calendar, DollarSign, Users } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, Calendar, DollarSign, Users, Heart, BookOpen, Briefcase, Activity, Lightbulb } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Contact = () => {
   return (
@@ -164,6 +165,121 @@ const Contact = () => {
                   </li>
                 </ul>
                 <p className="text-bukal-accent font-cartoon">Contact us for customized programs and special group rates!</p>
+              </div>
+            </div>
+          </div>
+          
+          {/* Community Services Section */}
+          <div className="retro-box max-w-4xl mx-auto mb-16">
+            <div className="bg-bukal-accent text-white py-3 px-6 font-cartoon">
+              <h2 className="text-2xl font-bold">Services for Neighboring Communities</h2>
+            </div>
+            <div className="p-6">
+              <p className="mb-6 text-lg">
+                Beyond caring for orphaned children, Bukal ng Buhay Foundation extends support to our neighboring communities through various programs:
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div className="bg-white rounded-xl shadow-md p-6 retro-box">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-bukal-primary rounded-full flex items-center justify-center mr-4">
+                      <Briefcase className="h-6 w-6 text-white" />
+                    </div>
+                    <h3 className="text-xl font-cartoon font-bold text-bukal-primary">Livelihood Programs</h3>
+                  </div>
+                  <p className="mb-3">
+                    We provide skills training and micro-financing opportunities to help families establish sustainable sources of income.
+                  </p>
+                  <ul className="text-sm space-y-1">
+                    <li>• Entrepreneurship workshops</li>
+                    <li>• Skills development courses</li>
+                    <li>• Small business start-up support</li>
+                  </ul>
+                </div>
+                
+                <div className="bg-white rounded-xl shadow-md p-6 retro-box">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-bukal-accent rounded-full flex items-center justify-center mr-4">
+                      <Activity className="h-6 w-6 text-white" />
+                    </div>
+                    <h3 className="text-xl font-cartoon font-bold text-bukal-primary">Medical Missions</h3>
+                  </div>
+                  <p className="mb-3">
+                    Regular medical missions provide free check-ups, medicines, and healthcare services to those who need them most.
+                  </p>
+                  <ul className="text-sm space-y-1">
+                    <li>• Quarterly medical check-ups</li>
+                    <li>• Medicine distribution</li>
+                    <li>• Health education seminars</li>
+                  </ul>
+                </div>
+                
+                <div className="bg-white rounded-xl shadow-md p-6 retro-box">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-bukal-primary rounded-full flex items-center justify-center mr-4">
+                      <Heart className="h-6 w-6 text-white" />
+                    </div>
+                    <h3 className="text-xl font-cartoon font-bold text-bukal-primary">Feeding Programs</h3>
+                  </div>
+                  <p className="mb-3">
+                    Our regular feeding programs provide nutritious meals to malnourished children and families in need.
+                  </p>
+                  <ul className="text-sm space-y-1">
+                    <li>• Weekly community feeding</li>
+                    <li>• Nutrition education for parents</li>
+                    <li>• Food package distribution</li>
+                  </ul>
+                </div>
+                
+                <div className="bg-white rounded-xl shadow-md p-6 retro-box">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-bukal-accent rounded-full flex items-center justify-center mr-4">
+                      <BookOpen className="h-6 w-6 text-white" />
+                    </div>
+                    <h3 className="text-xl font-cartoon font-bold text-bukal-primary">Educational Assistance</h3>
+                  </div>
+                  <p className="mb-3">
+                    We provide scholarships, school supplies, and tutorials to underprivileged students in our community.
+                  </p>
+                  <ul className="text-sm space-y-1">
+                    <li>• School supplies distribution</li>
+                    <li>• After-school tutorial programs</li>
+                    <li>• Scholarship opportunities</li>
+                  </ul>
+                </div>
+                
+                <div className="bg-white rounded-xl shadow-md p-6 retro-box md:col-span-2">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-bukal-primary rounded-full flex items-center justify-center mr-4">
+                      <Lightbulb className="h-6 w-6 text-white" />
+                    </div>
+                    <h3 className="text-xl font-cartoon font-bold text-bukal-primary">Values Formation & Community Empowerment</h3>
+                  </div>
+                  <p className="mb-3">
+                    We promote spiritual growth, leadership training, and moral development through community-based programs that strengthen families and communities.
+                  </p>
+                  <ul className="text-sm space-y-1">
+                    <li>• Family values workshops</li>
+                    <li>• Leadership training for community leaders</li>
+                    <li>• Community prayer gatherings</li>
+                    <li>• Youth development activities</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div className="text-center p-6 bg-bukal-primary/10 rounded-xl">
+                <p className="text-lg font-cartoon text-bukal-primary mb-4">
+                  "We believe that by strengthening communities, we create a better environment for all children to thrive."
+                </p>
+                <p className="mb-4">
+                  If you would like to get involved or support any of these community programs, please contact us. Your generosity can make a significant impact in the lives of many families.
+                </p>
+                <Link to="/donate" className="inline-block">
+                  <button className="bg-bukal-accent hover:bg-amber-400 text-white font-bold py-2 px-6 rounded-lg border-4 border-white/30 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] transform transition-all duration-300 hover:translate-y-1 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)]">
+                    <Heart className="inline-block mr-2 h-5 w-5" />
+                    Support Our Community Programs
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

@@ -8,39 +8,42 @@ const RetroGameEffects: React.FC = () => {
   
   const audioRef = React.useRef<HTMLAudioElement | null>(null);
   
-  // Add click sound effect function
+  // Add click sound effect function - optimized with memoization
   const playClickSound = React.useCallback(() => {
     try {
+      // Create audio only once and reuse it
       const clickSound = new Audio();
       clickSound.volume = 0.2;
-      // Short base64 encoded click sound
-      clickSound.src = 'data:audio/wav;base64,UklGRlQFAABXQVZFZm10IBAAAAABAAEARKwAAESsAAABAAgAZGF0YTAFAACAgICAgICAgICAgICAgICAgICAgICBgYGBgoGCgoKDg4OEhISFhYWGhoaHh4eIiIiJiYmKioqLi4uMjIyNjY2Ojo6Pj4+QkJCRkZGSkpKTk5OUlJSVlZWWlpaXl5eYmJiZmZmampqbm5ucnJydnZ2enp6fn5+goKChoaGioqKjo6OkpKSlpaWmpqanp6eoqKipqamqqqqrq6usrKytra2urq6vr6+wsLCxsbGysrKzs7O0tLS1tbW2tra3t7e4uLi5ubm6urq7u7u8vLy9vb2+vr6/v7/AwMDBwcHCwsLDw8PExMTFxcXGxsbHx8fIyMjJycnKysrLy8vMzMzNzc3Ozs7Pz8/Q0NDR0dHS0tLT09PU1NTV1dXW1tbX19fY2NjZ2dna2trb29vc3Nzd3d3e3t7f39/g4ODh4eHi4uLj4+Pk5OTl5eXm5ubn5+fo6Ojp6enq6urr6+vs7Ozt7e3u7u7v7+/w8PDx8fHy8vLz8/P09PT19fX29vb39/f4+Pj5+fn6+vr7+/v8/Pz9/f3+/v7///+AgICAgICAgICAgICAgICAgICAgICBgYGBgoGCgoKDg4OEhISFhYWGhoaHh4eIiIiJiYmKioqLi4uMjIyNjY2Oj';
+      // Shorter base64 encoded click sound for faster loading
+      clickSound.src = 'data:audio/wav;base64,UklGRhwAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQgAAAAAAAAAAAAA';
       clickSound.play().catch(error => {
-        console.log("Browser blocked click sound autoplay");
+        // Silent error - no console logs for better performance
       });
     } catch (error) {
-      console.log("Browser doesn't support audio playback");
+      // Silent error
     }
   }, []);
 
-  // Handle clicks to play sound
+  // Handle clicks to play sound - with optimized effect cleanup
   React.useEffect(() => {
     const handleClick = (event: MouseEvent) => {
       playClickSound();
       
-      // Create click effect animation
-      const clickEffect = document.createElement('div');
-      clickEffect.className = 'pixel-click-effect';
-      clickEffect.style.left = `${event.clientX}px`;
-      clickEffect.style.top = `${event.clientY}px`;
-      document.body.appendChild(clickEffect);
-      
-      // Remove the effect element after animation completes
-      setTimeout(() => {
-        if (document.body.contains(clickEffect)) {
-          document.body.removeChild(clickEffect);
-        }
-      }, 1000);
+      // Create click effect animation - only on non-mobile devices to save performance
+      if (window.innerWidth > 768) {
+        const clickEffect = document.createElement('div');
+        clickEffect.className = 'pixel-click-effect';
+        clickEffect.style.left = `${event.clientX}px`;
+        clickEffect.style.top = `${event.clientY}px`;
+        document.body.appendChild(clickEffect);
+        
+        // Remove the effect element after animation completes
+        setTimeout(() => {
+          if (document.body.contains(clickEffect)) {
+            document.body.removeChild(clickEffect);
+          }
+        }, 800); // Reduced from 1000ms for better performance
+      }
     };
     
     document.addEventListener('click', handleClick);
@@ -50,16 +53,26 @@ const RetroGameEffects: React.FC = () => {
     };
   }, [playClickSound]);
 
+  // Cursor trail effect - optimized with reduced updates and memoization
   React.useEffect(() => {
-    // Create cursor trail effect (typical of 2000s flash games)
+    // Only add cursor trail on non-mobile devices
+    if (window.innerWidth <= 768) return;
+    
     const cursorTrail = document.getElementById('cursor-trail');
     const dots: HTMLDivElement[] = [];
-    const maxDots = 6; // Reduced max dots for faster movement
+    const maxDots = 4; // Reduced from 6 for better performance
     
     if (cursorTrail) {
+      let lastUpdate = 0;
+      const throttleMs = 20; // Only update every 20ms instead of every mousemove
+      
       const updateCursorTrail = (e: MouseEvent) => {
+        const now = Date.now();
+        if (now - lastUpdate < throttleMs) return;
+        lastUpdate = now;
+        
         const dot = document.createElement('div');
-        dot.className = 'absolute w-2 h-2 bg-bukal-accent rounded-full transform -translate-x-1/2 -translate-y-1/2 opacity-80';
+        dot.className = 'absolute w-2 h-2 bg-bukal-accent rounded-full transform -translate-x-1/2 -translate-y-1/2 opacity-70';
         dot.style.left = `${e.clientX}px`;
         dot.style.top = `${e.clientY}px`;
         cursorTrail.appendChild(dot);
@@ -68,19 +81,15 @@ const RetroGameEffects: React.FC = () => {
         // Fade out and remove excess dots faster
         if (dots.length > maxDots) {
           const oldDot = dots.shift();
-          if (oldDot) {
-            oldDot.style.opacity = '0';
-            setTimeout(() => {
-              if (oldDot.parentNode === cursorTrail) {
-                cursorTrail.removeChild(oldDot);
-              }
-            }, 150); // Reduced timeout for faster fading
+          if (oldDot && oldDot.parentNode === cursorTrail) {
+            cursorTrail.removeChild(oldDot);
           }
         }
         
-        // Fade out remaining dots more quickly
+        // Fade out remaining dots more quickly - simplified loop for performance
         dots.forEach((d, i) => {
-          d.style.opacity = (1 - i / maxDots * 1.5).toString(); // Faster opacity reduction
+          const opacity = 0.7 - (i / maxDots * 0.7);
+          d.style.opacity = opacity.toString();
         });
       };
       
@@ -91,18 +100,20 @@ const RetroGameEffects: React.FC = () => {
         window.removeEventListener('mousemove', updateCursorTrail);
         
         // Clean up any remaining dots
-        while (cursorTrail.firstChild) {
-          cursorTrail.removeChild(cursorTrail.firstChild);
-        }
+        dots.forEach(dot => {
+          if (dot.parentNode === cursorTrail) {
+            cursorTrail.removeChild(dot);
+          }
+        });
       };
     }
   }, []);
   
-  // Simulate loading delay for the loading screen and start background music
+  // Simulate loading delay - optimized with shorter timeout
   React.useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1500); // Reduced from 2500ms to 1500ms for faster loading
+    }, 1200); // Reduced to 1.2 seconds for faster loading
     
     // Startup sound effect - load this only once the page is already visible
     try {

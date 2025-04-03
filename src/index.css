@@ -1,9 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap'); /* Pixel font for headers */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'Comic Sans MS';
+  src: local('Comic Sans MS');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Comic Sans';
+  src: local('Comic Sans');
+  font-display: swap;
+}
 
 @layer base {
   :root {
@@ -371,7 +385,7 @@
   animation-delay: 300ms;
 }
 
-/* Animated footer clouds */
+/* Animated footer clouds - optimized for performance */
 .footer-cloud {
   position: absolute;
   bottom: 100%;
@@ -379,7 +393,9 @@
   height: 60px;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 50%;
-  animation: cloud-float 15s infinite linear;
+  animation: cloud-float 20s infinite linear;
+  will-change: transform;
+  transform: translateZ(0); /* Force GPU acceleration */
 }
 
 .footer-cloud::before,
@@ -405,8 +421,8 @@
 }
 
 @keyframes cloud-float {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(1000%); }
+  0% { transform: translateX(-200px); }
+  100% { transform: translateX(calc(100vw + 200px)); }
 }
 
 /* Performance optimizations */
@@ -437,4 +453,183 @@ img, video {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Optimize images for better performance */
+img {
+  content-visibility: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ensure optimized font rendering */
+* {
+  text-rendering: optimizeLegibility;
+}
+
+/* Improved screen flash effect */
+.screen-flash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+  animation: flash 0.15s ease-out;
+}
+
+@keyframes flash {
+  0% { opacity: 0; }
+  50% { opacity: 0.7; }
+  100% { opacity: 0; }
+}
+
+/* Custom cursor styling */
+.retro-cursor {
+  cursor: none;
+}
+
+.retro-cursor body {
+  cursor: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='12' height='12' fill='%234CAF50'/%3E%3Crect x='1' y='1' width='10' height='10' fill='white'/%3E%3Crect x='2' y='2' width='8' height='8' fill='%234CAF50'/%3E%3C/svg%3E"), auto;
+}
+
+/* Pixel click effect - optimized */
+.pixel-click-effect {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0' y='16' width='8' height='8' fill='%23FFC107' fill-opacity='0.8'/%3E%3Crect x='8' y='8' width='8' height='8' fill='%23FFC107' fill-opacity='0.8'/%3E%3Crect x='16' y='0' width='8' height='8' fill='%23FFC107' fill-opacity='0.8'/%3E%3Crect x='24' y='8' width='8' height='8' fill='%23FFC107' fill-opacity='0.8'/%3E%3Crect x='32' y='16' width='8' height='8' fill='%23FFC107' fill-opacity='0.8'/%3E%3Crect x='24' y='24' width='8' height='8' fill='%23FFC107' fill-opacity='0.8'/%3E%3Crect x='16' y='32' width='8' height='8' fill='%23FFC107' fill-opacity='0.8'/%3E%3Crect x='8' y='24' width='8' height='8' fill='%23FFC107' fill-opacity='0.8'/%3E%3C/svg%3E");
+  background-size: contain;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  animation: click-effect 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes click-effect {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Keyframes for health bar animation */
+@keyframes health-bar {
+  0% { width: 60%; }
+  50% { width: 75%; }
+  100% { width: 60%; }
+}
+
+/* Pixel clouds */
+.pixel-cloud {
+  position: relative;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 
+    10px -10px 0 white,
+    20px 0 0 white,
+    30px -10px 0 white,
+    40px 0 0 white,
+    10px 10px 0 white,
+    30px 10px 0 white;
+}
+
+/* Pixelated rendering for old-school images */
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Optimization for mobile devices */
+@media (max-width: 768px) {
+  .animate-bounce-slight,
+  .animate-float, 
+  .animate-float-slow,
+  .animate-twinkle {
+    animation: none !important; /* Disable animations on mobile for better performance */
+  }
+  
+  /* Simplify shadows on mobile for better performance */
+  .shadow-md, 
+  .shadow-lg,
+  .shadow-xl,
+  .retro-box,
+  .cartoon-card {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24) !important;
+  }
+  
+  /* Reduce border widths on mobile */
+  .border-4 {
+    border-width: 2px !important;
+  }
+}
+
+/* Additional optimizations for all devices */
+.retro-box,
+.cartoon-card,
+.pixel-click-effect,
+.footer-cloud,
+.pixel-cloud {
+  will-change: transform;
+  transform: translateZ(0); /* Force GPU acceleration */
+}
+
+/* Disable animations when printing */
+@media print {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Make retro buttons more responsive */
+.retro-button {
+  position: relative;
+  transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.retro-button:active {
+  transform: translateY(4px) scale(0.98);
+  box-shadow: 0 0 0 rgba(0,0,0,0.2) !important;
+}
+
+/* Fix font loading issues for specific phones */
+@supports (-webkit-touch-callout: none) {
+  /* For iOS devices */
+  .font-cartoon {
+    font-family: 'Comic Neue', 'Chalkboard SE', cursive !important;
+  }
+}
+
+@supports (-moz-appearance: none) {
+  /* For Firefox */
+  .font-cartoon {
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive !important;
+  }
+}
+
+/* General style improvements */
+body {
+  overscroll-behavior-y: none; /* Prevent pull-to-refresh on mobile */
+  text-size-adjust: 100%; /* Prevent text size adjustment when orientation changes */
+}
+
+/* Fix for buttons on mobile */
+button, a {
+  -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+}
+
+/* Ensure proper smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
