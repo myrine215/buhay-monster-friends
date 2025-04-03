@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import * as React from 'react';
+import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X, Home, Users, Phone, Heart } from "lucide-react";
 import { Link } from "react-router-dom";

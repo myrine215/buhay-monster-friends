@@ -1,6 +1,7 @@
-import React from 'react';
+import * as React from 'react';
 import { Button } from "@/components/ui/button";
 import { Heart } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -54,10 +55,12 @@ const HeroSection = () => {
               God calls us to care for these children who are close to His heart.
             </p>
           </div>
-          <Button className="retro-button font-cartoon text-lg px-8 py-6 animate-bounce-slight">
-            <Heart className="mr-2 h-6 w-6" fill="white" />
-            <span>Make a Difference Today</span>
-          </Button>
+          <Link to="/donate">
+            <Button className="retro-button font-cartoon text-lg px-8 py-6 animate-bounce-slight">
+              <Heart className="mr-2 h-6 w-6" fill="white" />
+              <span>Make a Difference Today</span>
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

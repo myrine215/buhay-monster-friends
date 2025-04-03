@@ -108,6 +108,14 @@ export default {
 						transform: 'translateY(-10px)'
 					}
 				},
+				'float-slow': {
+					'0%': {
+						transform: 'translateX(-100%)'
+					},
+					'100%': {
+						transform: 'translateX(1000%)'
+					}
+				},
 				'bounce-slight': {
 					'0%, 100%': {
 						transform: 'translateY(0)'
@@ -149,17 +157,79 @@ export default {
 				'marquee': {
 					'0%': { transform: 'translateX(0%)' },
 					'100%': { transform: 'translateX(-100%)' }
+				},
+				'twinkle': {
+					'0%, 100%': { 
+						opacity: '0.7',
+						transform: 'scale(1)'
+					},
+					'50%': { 
+						opacity: '1',
+						transform: 'scale(1.3)'
+					}
+				},
+				'crt-flicker': {
+					'0%': {
+						opacity: '0.9'
+					},
+					'2%': {
+						opacity: '1'
+					},
+					'8%': {
+						opacity: '0.9'
+					},
+					'9%': {
+						opacity: '1'
+					},
+					'12%': {
+						opacity: '0.9'
+					},
+					'20%': {
+						opacity: '1'
+					},
+					'25%': {
+						opacity: '0.9'
+					},
+					'60%': {
+						opacity: '1'
+					},
+					'65%': {
+						opacity: '0.9'
+					},
+					'80%': {
+						opacity: '1'
+					},
+					'90%': {
+						opacity: '0.9'
+					},
+					'100%': {
+						opacity: '1'
+					}
+				},
+				'pixel-slide-up': {
+					'0%': {
+						transform: 'translateY(100%)',
+						opacity: '0'
+					},
+					'100%': {
+						transform: 'translateY(0)',
+						opacity: '1'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'float': 'float 6s ease-in-out infinite',
+				'float-slow': 'float-slow 30s linear infinite',
 				'bounce-slight': 'bounce-slight 2s ease-in-out infinite',
 				'pixel-pulse': 'pixel-pulse 2s ease-in-out infinite',
 				'pixel-rotate': 'pixel-rotate 2s ease-in-out infinite',
 				'pixel-blink': 'pixel-blink 1.5s ease-in-out infinite',
-				'marquee': 'marquee 25s linear infinite'
+				'marquee': 'marquee 25s linear infinite',
+				'twinkle': 'twinkle 3s ease-in-out infinite',
+				'crt-flicker': 'crt-flicker 2s infinite',
+				'pixel-slide-up': 'pixel-slide-up 0.5s ease-out'
 			},
 			fontFamily: {
 				'rounded': ['Varela Round', 'system-ui', 'sans-serif'],

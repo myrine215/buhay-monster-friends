@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 
@@ -12,7 +12,7 @@ const About = () => {
             About <span className="text-bukal-accent">Us</span>
           </h1>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
             {/* Mission */}
             <div className="retro-box bg-white/90 p-6 rounded-xl">
               <div className="bg-bukal-primary text-white py-2 px-4 rounded-lg mb-4 inline-block font-cartoon">

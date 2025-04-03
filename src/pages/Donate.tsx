@@ -1,8 +1,8 @@
-import React from 'react';
+import * as React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Button } from "@/components/ui/button";
-import { Heart, Gift, Users, Calendar } from "lucide-react";
+import { Heart, Gift, Calendar, Users } from "lucide-react";
 
 const Donate = () => {
   return (
@@ -14,7 +14,7 @@ const Donate = () => {
             Donate <span className="text-bukal-accent">Now</span>
           </h1>
           
-          <div className="retro-box max-w-3xl mx-auto text-center mb-16 rounded-xl p-6">
+          <div className="retro-box max-w-4xl mx-auto text-center mb-16 rounded-xl p-6">
             <div className="w-20 h-20 bg-bukal-primary rounded-full flex items-center justify-center mb-6 mx-auto">
               <Heart className="h-10 w-10 text-white" fill="white" />
             </div>
@@ -27,7 +27,7 @@ const Donate = () => {
           </div>
           
           {/* Donation Options */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-16">
             {/* One-Time Donation */}
             <div className="overflow-hidden rounded-xl retro-box h-full flex flex-col animate-float">
               <div className="bg-bukal-primary text-white py-3 px-6 font-cartoon">
@@ -143,7 +143,7 @@ const Donate = () => {
             </div>
           </div>
           
-          <div className="text-center max-w-2xl mx-auto">
+          <div className="text-center max-w-4xl mx-auto">
             <p className="text-xl italic mb-8 font-cartoon">
               "God doesn't call you to help all 153,000,000 orphans worldwide. But you can help one. And for that one child, you can change the world."
             </p>
