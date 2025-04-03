@@ -69,6 +69,14 @@ export default {
 					"accent": "#FFC107",
 					"background": "#E8F5E9",
 					"text": "#1B5E20",
+					"chat-bubble": "#DCF8C6",
+					"chat-text": "#263238",
+					"game-highlight": "#FFD54F",
+					"game-border": "#8BC34A",
+					"pixel-green": "#00CC00",
+					"pixel-yellow": "#FFCC00",
+					"pixel-blue": "#00AAFF",
+					"pixel-red": "#FF6666",
 				},
 			},
 			borderRadius: {
@@ -116,6 +124,32 @@ export default {
 					'50%': {
 						transform: 'scale(1.05)'
 					}
+				},
+				'pixel-rotate': {
+					'0%': {
+						transform: 'rotate(0deg)'
+					},
+					'25%': {
+						transform: 'rotate(5deg)'
+					},
+					'75%': {
+						transform: 'rotate(-5deg)'
+					},
+					'100%': {
+						transform: 'rotate(0deg)'
+					}
+				},
+				'pixel-blink': {
+					'0%, 100%': {
+						opacity: '1'
+					},
+					'50%': {
+						opacity: '0.6'
+					}
+				},
+				'marquee': {
+					'0%': { transform: 'translateX(0%)' },
+					'100%': { transform: 'translateX(-100%)' }
 				}
 			},
 			animation: {
@@ -123,7 +157,10 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'float': 'float 6s ease-in-out infinite',
 				'bounce-slight': 'bounce-slight 2s ease-in-out infinite',
-				'pixel-pulse': 'pixel-pulse 2s ease-in-out infinite'
+				'pixel-pulse': 'pixel-pulse 2s ease-in-out infinite',
+				'pixel-rotate': 'pixel-rotate 2s ease-in-out infinite',
+				'pixel-blink': 'pixel-blink 1.5s ease-in-out infinite',
+				'marquee': 'marquee 25s linear infinite'
 			},
 			fontFamily: {
 				'cartoon': ['Comic Sans MS', 'Comic Sans', 'cursive'],

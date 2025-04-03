@@ -20,23 +20,23 @@ const Navigation = () => {
               <span className="text-bukal-primary text-2xl font-cartoon font-bold pixelated">B</span>
             </div>
             <span className="font-cartoon text-xl md:text-2xl font-bold drop-shadow-[2px_2px_0px_rgba(0,0,0,0.3)]">
-              Bukal ng Buhay Foundation
+              Bukal ng Buhay
             </span>
           </div>
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-4">
-            <Link to="/" className="flex items-center hover:text-bukal-accent bg-bukal-secondary/60 px-3 py-2 rounded-lg border-2 border-white/30 transition-all hover:scale-105">
+            <Link to="/" className="flex items-center hover:text-bukal-accent bg-bukal-secondary/60 px-3 py-2 rounded-lg border-2 border-white/30 transition-all hover:scale-105 whitespace-nowrap">
               <Home className="mr-1 h-4 w-4" />
               <span>Home</span>
             </Link>
-            <Link to="/about" className="flex items-center hover:text-bukal-accent bg-bukal-secondary/60 px-3 py-2 rounded-lg border-2 border-white/30 transition-all hover:scale-105">
+            <Link to="/about" className="flex items-center hover:text-bukal-accent bg-bukal-secondary/60 px-3 py-2 rounded-lg border-2 border-white/30 transition-all hover:scale-105 whitespace-nowrap">
               <Users className="mr-1 h-4 w-4" />
               <span>About Us</span>
             </Link>
-            <Link to="/contact" className="flex items-center hover:text-bukal-accent bg-bukal-secondary/60 px-3 py-2 rounded-lg border-2 border-white/30 transition-all hover:scale-105">
+            <Link to="/contact" className="flex items-center hover:text-bukal-accent bg-bukal-secondary/60 px-3 py-2 rounded-lg border-2 border-white/30 transition-all hover:scale-105 whitespace-nowrap">
               <Phone className="mr-1 h-4 w-4" />
-              <span>Contact Us</span>
+              <span>Contact</span>
             </Link>
             <Link to="/donate">
               <Button className="bg-bukal-accent hover:bg-amber-400 text-white font-bold py-2 px-4 rounded-lg border-4 border-white/30 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] transform transition-all duration-300 hover:translate-y-1 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)]">

@@ -10,15 +10,15 @@ const Donate = () => {
       <Navigation />
       <main className="flex-grow">
         <div className="container mx-auto py-16 px-4">
-          <h1 className="text-3xl md:text-5xl font-cartoon font-bold text-bukal-primary text-center mb-8">
+          <h1 className="text-3xl md:text-5xl font-pixel font-bold text-bukal-primary text-center mb-8 drop-shadow-[2px_2px_0px_rgba(0,0,0,0.3)]">
             Donate <span className="text-bukal-accent">Now</span>
           </h1>
           
-          <div className="cartoon-card max-w-3xl mx-auto text-center mb-16">
-            <div className="w-20 h-20 bg-bukal-primary rounded-full flex items-center justify-center mb-6 mx-auto">
+          <div className="retro-box max-w-3xl mx-auto text-center mb-16">
+            <div className="w-20 h-20 bg-bukal-primary rounded-full flex items-center justify-center mb-6 mx-auto pixel-border">
               <Heart className="h-10 w-10 text-white" fill="white" />
             </div>
-            <p className="text-xl mb-6">
+            <p className="text-xl mb-6 font-pixel">
               Support the foundation, support the children
             </p>
             <p className="text-lg mb-8">
@@ -29,9 +29,9 @@ const Donate = () => {
           {/* Donation Options */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
             {/* One-Time Donation */}
-            <div className="cartoon-card h-full flex flex-col">
-              <div className="bg-bukal-primary text-white py-3 px-6 rounded-t-xl">
-                <h2 className="text-xl font-cartoon font-bold">One-Time Donation</h2>
+            <div className="retro-box h-full flex flex-col animate-float">
+              <div className="bg-bukal-primary text-white py-3 px-6 rounded-t-xl font-pixel">
+                <h2 className="text-xl font-bold">One-Time Donation</h2>
               </div>
               <div className="p-6 flex-grow flex flex-col justify-between">
                 <div>
@@ -42,16 +42,16 @@ const Donate = () => {
                     Make an immediate impact with a one-time donation to help children in need.
                   </p>
                 </div>
-                <Button className="cartoon-button w-full mt-4">
+                <Button className="retro-button w-full mt-4 font-pixel">
                   Donate Now
                 </Button>
               </div>
             </div>
             
             {/* Monthly Giving */}
-            <div className="cartoon-card h-full flex flex-col">
-              <div className="bg-bukal-accent text-white py-3 px-6 rounded-t-xl">
-                <h2 className="text-xl font-cartoon font-bold">Monthly Giving</h2>
+            <div className="retro-box h-full flex flex-col animate-float" style={{ animationDelay: '0.2s' }}>
+              <div className="bg-bukal-accent text-white py-3 px-6 rounded-t-xl font-pixel">
+                <h2 className="text-xl font-bold">Monthly Giving</h2>
               </div>
               <div className="p-6 flex-grow flex flex-col justify-between">
                 <div>
@@ -62,16 +62,16 @@ const Donate = () => {
                     Become a monthly donor and provide consistent support for our children.
                   </p>
                 </div>
-                <Button className="cartoon-button w-full mt-4">
+                <Button className="retro-button w-full mt-4 font-pixel">
                   Become a Monthly Donor
                 </Button>
               </div>
             </div>
             
             {/* Sponsor a Child */}
-            <div className="cartoon-card h-full flex flex-col">
-              <div className="bg-bukal-primary text-white py-3 px-6 rounded-t-xl">
-                <h2 className="text-xl font-cartoon font-bold">Sponsor a Child</h2>
+            <div className="retro-box h-full flex flex-col animate-float" style={{ animationDelay: '0.4s' }}>
+              <div className="bg-bukal-primary text-white py-3 px-6 rounded-t-xl font-pixel">
+                <h2 className="text-xl font-bold">Sponsor a Child</h2>
               </div>
               <div className="p-6 flex-grow flex flex-col justify-between">
                 <div>
@@ -82,7 +82,7 @@ const Donate = () => {
                     Transform a child's life through education, healthcare, and daily support.
                   </p>
                 </div>
-                <Button className="cartoon-button w-full mt-4">
+                <Button className="retro-button w-full mt-4 font-pixel">
                   Sponsor a Child
                 </Button>
               </div>
@@ -90,28 +90,28 @@ const Donate = () => {
           </div>
           
           {/* Other Ways to Give */}
-          <div className="cartoon-card max-w-4xl mx-auto mb-16">
-            <div className="bg-bukal-primary text-white py-3 px-6 rounded-t-xl">
-              <h2 className="text-2xl font-cartoon font-bold">Other Ways to Give</h2>
+          <div className="retro-box max-w-4xl mx-auto mb-16">
+            <div className="bg-bukal-primary text-white py-3 px-6 rounded-t-xl font-pixel">
+              <h2 className="text-2xl font-bold">Other Ways to Give</h2>
             </div>
             <div className="p-6">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="bg-white rounded-xl shadow-md p-4">
-                  <h3 className="text-xl font-cartoon font-bold text-bukal-primary mb-3">Donate Goods</h3>
+                <div className="retro-box p-4 bg-white">
+                  <h3 className="text-xl font-pixel font-bold text-bukal-primary mb-3">Donate Goods</h3>
                   <p className="text-gray-700 mb-4">
                     We welcome donations of food, clothing, school supplies, hygiene products, and other essentials. Please contact us for current needs and drop-off information.
                   </p>
                 </div>
                 
-                <div className="bg-white rounded-xl shadow-md p-4">
-                  <h3 className="text-xl font-cartoon font-bold text-bukal-primary mb-3">Corporate Partnership</h3>
+                <div className="retro-box p-4 bg-white">
+                  <h3 className="text-xl font-pixel font-bold text-bukal-primary mb-3">Corporate Partnership</h3>
                   <p className="text-gray-700 mb-4">
                     Partner with us as a corporation to make a larger impact. We offer various partnership opportunities for businesses looking to fulfill their social responsibility.
                   </p>
                 </div>
                 
-                <div className="bg-white rounded-xl shadow-md p-4">
-                  <h3 className="text-xl font-cartoon font-bold text-bukal-primary mb-3">Volunteer</h3>
+                <div className="retro-box p-4 bg-white">
+                  <h3 className="text-xl font-pixel font-bold text-bukal-primary mb-3">Volunteer</h3>
                   <p className="text-gray-700 mb-4">
                     Share your time and talents with our children. We need volunteers for tutoring, mentoring, facility maintenance, and special events.
                   </p>
@@ -119,7 +119,7 @@ const Donate = () => {
               </div>
               
               <div className="text-center mt-8">
-                <Button className="cartoon-button">
+                <Button className="retro-button font-pixel">
                   Contact Us to Learn More
                 </Button>
               </div>
@@ -127,15 +127,15 @@ const Donate = () => {
           </div>
           
           {/* Banking Information */}
-          <div className="cartoon-card max-w-4xl mx-auto mb-16">
-            <div className="bg-bukal-accent text-white py-3 px-6 rounded-t-xl">
-              <h2 className="text-2xl font-cartoon font-bold">Banking Information</h2>
+          <div className="retro-box max-w-4xl mx-auto mb-16">
+            <div className="bg-bukal-accent text-white py-3 px-6 rounded-t-xl font-pixel">
+              <h2 className="text-2xl font-bold">Banking Information</h2>
             </div>
             <div className="p-6 text-center">
               <p className="text-lg mb-4">For direct bank transfers, please use the following information:</p>
               
-              <div className="bg-white rounded-xl shadow-md p-6 max-w-md mx-auto">
-                <p className="mb-2"><strong>Bank Name:</strong> Example Bank</p>
+              <div className="retro-box p-6 max-w-md mx-auto bg-white">
+                <p className="mb-2 font-pixel"><strong>Bank Name:</strong> Example Bank</p>
                 <p className="mb-2"><strong>Account Name:</strong> Bukal ng Buhay Foundation Inc.</p>
                 <p className="mb-2"><strong>Account Number:</strong> 1234-5678-9012-3456</p>
                 <p><strong>Branch:</strong> Bulacan Branch</p>
@@ -144,7 +144,7 @@ const Donate = () => {
           </div>
           
           <div className="text-center max-w-2xl mx-auto">
-            <p className="text-xl italic mb-8">
+            <p className="text-xl italic mb-8 font-pixel pixel-border inline-block px-4 py-2">
               "God doesn't call you to help all 153,000,000 orphans worldwide. But you can help one. And for that one child, you can change the world."
             </p>
           </div>
