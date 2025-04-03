@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -42,8 +41,8 @@ const About = () => {
           </div>
           
           {/* Our Founder */}
-          <div className="retro-box max-w-4xl mx-auto mb-16 rounded-xl">
-            <div className="bg-bukal-primary text-white py-3 px-6 rounded-t-xl font-pixel">
+          <div className="overflow-hidden rounded-xl retro-box max-w-4xl mx-auto mb-16">
+            <div className="bg-bukal-primary text-white py-3 px-6 font-pixel">
               <h2 className="text-2xl font-bold">Our Founder</h2>
             </div>
             <div className="p-6">
@@ -74,8 +73,8 @@ const About = () => {
           </div>
           
           {/* Our Wards */}
-          <div className="retro-box max-w-4xl mx-auto mb-16 rounded-xl">
-            <div className="bg-bukal-accent text-white py-3 px-6 rounded-t-xl font-pixel">
+          <div className="overflow-hidden rounded-xl retro-box max-w-4xl mx-auto mb-16">
+            <div className="bg-bukal-accent text-white py-3 px-6 font-pixel">
               <h2 className="text-2xl font-bold">Our Wards</h2>
             </div>
             <div className="p-6">
@@ -102,10 +101,6 @@ const About = () => {
                 </p>
               </div>
             </div>
-          </div>
-          
-          <div className="text-center text-2xl font-pixel text-bukal-accent mb-8 inline-block mx-auto px-6 py-2">
-            Bringing Joy & Purpose for the future.
           </div>
         </div>
       </main>

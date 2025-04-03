@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -28,7 +27,7 @@ const Contact = () => {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                 <div className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center retro-box">
-                  <div className="w-16 h-16 bg-bukal-primary rounded-full flex items-center justify-center mb-4 pixel-border">
+                  <div className="w-16 h-16 bg-bukal-primary rounded-full flex items-center justify-center mb-4">
                     <Mail className="h-8 w-8 text-white" />
                   </div>
                   <h3 className="text-xl font-pixel font-bold text-bukal-primary mb-2">Email Us</h3>
@@ -38,7 +37,7 @@ const Contact = () => {
                 </div>
                 
                 <div className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center retro-box">
-                  <div className="w-16 h-16 bg-bukal-accent rounded-full flex items-center justify-center mb-4 pixel-border">
+                  <div className="w-16 h-16 bg-bukal-accent rounded-full flex items-center justify-center mb-4">
                     <Phone className="h-8 w-8 text-white" />
                   </div>
                   <h3 className="text-xl font-pixel font-bold text-bukal-primary mb-2">Call Us</h3>
@@ -50,7 +49,7 @@ const Contact = () => {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center retro-box">
-                  <div className="w-16 h-16 bg-bukal-primary rounded-full flex items-center justify-center mb-4 pixel-border">
+                  <div className="w-16 h-16 bg-bukal-primary rounded-full flex items-center justify-center mb-4">
                     <Facebook className="h-8 w-8 text-white" />
                   </div>
                   <h3 className="text-xl font-pixel font-bold text-bukal-primary mb-2">Follow Us</h3>
@@ -58,7 +57,7 @@ const Contact = () => {
                 </div>
                 
                 <div className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center retro-box">
-                  <div className="w-16 h-16 bg-bukal-accent rounded-full flex items-center justify-center mb-4 pixel-border">
+                  <div className="w-16 h-16 bg-bukal-accent rounded-full flex items-center justify-center mb-4">
                     <MapPin className="h-8 w-8 text-white" />
                   </div>
                   <h3 className="text-xl font-pixel font-bold text-bukal-primary mb-2">Visit Us</h3>
@@ -71,8 +70,8 @@ const Contact = () => {
           </div>
           
           {/* Map Section */}
-          <div className="retro-box max-w-4xl mx-auto mb-16">
-            <div className="bg-bukal-primary text-white py-3 px-6 rounded-t-xl font-pixel">
+          <div className="overflow-hidden rounded-xl retro-box max-w-4xl mx-auto mb-16">
+            <div className="bg-bukal-primary text-white py-3 px-6 font-pixel">
               <h2 className="text-2xl font-bold">Find Us</h2>
             </div>
             <div className="p-6">
@@ -87,10 +86,6 @@ const Contact = () => {
                 ></iframe>
               </div>
             </div>
-          </div>
-          
-          <div className="text-center text-2xl font-pixel text-bukal-accent mb-8 inline-block mx-auto px-6 py-2">
-            Bringing Joy & Purpose for the future.
           </div>
         </div>
       </main>

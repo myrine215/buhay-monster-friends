@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -164,7 +163,8 @@ export default {
 			},
 			fontFamily: {
 				'rounded': ['Varela Round', 'system-ui', 'sans-serif'],
-				'pixel': ['VT323', 'monospace'],
+				'pixel': ['Nunito', 'system-ui', 'sans-serif'],
+				'cartoon': ['Komika Axis', 'Comic Sans MS', 'cursive'],
 			}
 		}
 	},
