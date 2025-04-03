@@ -108,17 +108,27 @@ export default {
 					'50%': {
 						transform: 'translateY(-5px)'
 					}
+				},
+				'pixel-pulse': {
+					'0%, 100%': {
+						transform: 'scale(1)'
+					},
+					'50%': {
+						transform: 'scale(1.05)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'float': 'float 6s ease-in-out infinite',
-				'bounce-slight': 'bounce-slight 2s ease-in-out infinite'
+				'bounce-slight': 'bounce-slight 2s ease-in-out infinite',
+				'pixel-pulse': 'pixel-pulse 2s ease-in-out infinite'
 			},
 			fontFamily: {
 				'cartoon': ['Comic Sans MS', 'Comic Sans', 'cursive'],
 				'rounded': ['Varela Round', 'system-ui', 'sans-serif'],
+				'pixel': ['VT323', 'monospace'],
 			}
 		}
 	},
