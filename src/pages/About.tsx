@@ -5,6 +5,24 @@ import { Link } from 'react-router-dom';
 import { Heart, BookOpen, Users, Lightbulb, HeartPulse, Star } from 'lucide-react';
 
 const About = () => {
+  // Add state to detect mobile devices
+  const [isMobile, setIsMobile] = React.useState(false);
+  
+  React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    // Check on mount
+    checkMobile();
+    
+    // Add listener for resize
+    window.addEventListener('resize', checkMobile);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+  
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />
@@ -194,7 +212,7 @@ const About = () => {
             </div>
           </div>
           
-          {/* Our Wards */}
+          {/* Our Wards - Removed animations for better performance */}
           <div className="overflow-hidden rounded-xl retro-box max-w-4xl mx-auto mb-16">
             <div className="bg-bukal-accent text-white py-3 px-6 font-cartoon">
               <h2 className="text-2xl font-bold">Our Wards</h2>
@@ -202,7 +220,7 @@ const About = () => {
             <div className="p-6">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[1, 2, 3].map((ward) => (
-                  <div key={ward} className="retro-box p-4 bg-white text-center animate-float rounded-xl" style={{ animationDelay: `${ward * 0.2}s` }}>
+                  <div key={ward} className="retro-box p-4 bg-white text-center rounded-xl">
                     <div className="w-24 h-24 mx-auto mb-4 bg-bukal-secondary/20 rounded-full flex items-center justify-center">
                       <span className="text-4xl font-cartoon text-bukal-primary">
                         {ward}

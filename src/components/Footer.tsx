@@ -23,13 +23,13 @@ const Footer = () => {
   
   return (
     <footer className="bg-bukal-primary text-white py-12 rounded-t-3xl border-t-4 border-bukal-secondary relative overflow-hidden">
-      {/* Animated Clouds - Only show on desktop for better performance */}
+      {/* Static Clouds - Only show on desktop for better performance */}
       {!isMobile && (
-        <>
-          <div className="footer-cloud" style={{ left: '10%', animationDuration: '25s', animationDelay: '0s' }}></div>
-          <div className="footer-cloud" style={{ left: '35%', animationDuration: '22s', animationDelay: '2s' }}></div>
-          <div className="footer-cloud" style={{ left: '70%', animationDuration: '24s', animationDelay: '4s' }}></div>
-        </>
+        <div className="absolute w-full h-16 top-0 transform -translate-y-full overflow-hidden">
+          <div className="static-cloud" style={{ left: '10%', top: '0' }}></div>
+          <div className="static-cloud" style={{ left: '40%', top: '0' }}></div>
+          <div className="static-cloud" style={{ left: '70%', top: '0' }}></div>
+        </div>
       )}
       
       <div className="container mx-auto px-4 relative z-10">
